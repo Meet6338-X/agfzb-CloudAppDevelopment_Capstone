@@ -150,3 +150,6 @@ cloudant/data/reviews-store.json
 *.log
 outputs/_*
 
+
+cookies.txt
+outputs/_*

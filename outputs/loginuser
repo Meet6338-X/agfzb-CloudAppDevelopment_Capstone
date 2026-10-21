@@ -1,0 +1,15 @@
+# Log in to the Django application with a valid username and password.
+
+theia@theia-devshahm:/home/project/server$ curl -s -i -c cookies.txt -X POST -d "username=shahm&psw=Shahm@2024" http://localhost:8000/djangoapp/login
+HTTP/1.1 302 Found
+Date: Wed, 21 Oct 2026 07:30:54 GMT
+Server: WSGIServer/0.2 CPython/3.12.6
+Content-Type: text/html; charset=utf-8
+Location: /djangoapp/
+X-Frame-Options: DENY
+Content-Length: 0
+Vary: Cookie
+X-Content-Type-Options: nosniff
+Referrer-Policy: same-origin
+Cross-Origin-Opener-Policy: same-origin
+Set-Cookie:  sessionid=0oz5jd4khtjqbstghch70g6ppf8udm4z; expires=Wed, 04 Nov 2026 07:30:54 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax

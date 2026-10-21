@@ -74,7 +74,7 @@ def get_dealers_from_cf(url, **kwargs):
     results = []
     json_result = get_request(url, **kwargs)
     if json_result:
-        print("JSON RESULT: ", json_result)
+        print(f"JSON RESULT: {len(json_result)} dealership document(s) retrieved")
         for dealer_doc in json_result:
             dealer_obj = CarDealer(
                 id=dealer_doc["id"], city=dealer_doc["city"],

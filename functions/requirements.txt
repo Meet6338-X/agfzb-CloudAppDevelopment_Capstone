@@ -1,4 +1,4 @@
-Flask==2.3.3
-requests==2.31.0
-ibm-cloud-sdk-core==3.10.0
-ibmcloudant==0.0.34
+Flask==3.0.3
+requests==2.34.2
+ibm-cloud-sdk-core==3.28.0
+ibmcloudant==0.11.12

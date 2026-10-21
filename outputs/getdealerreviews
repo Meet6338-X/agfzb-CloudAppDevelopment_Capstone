@@ -1,0 +1,4 @@
+# The reviews submitted for dealer id 15.
+
+theia@theia-devshahm:/home/project/server$ curl -s -X GET "http://localhost:5000/api/get_reviews?id=15"
+[{"car_make":"Audi","car_model":"A6","car_year":2010,"dealership":15,"id":1,"name":"Berkly Shepley","purchase":true,"purchase_date":"07/11/2020","review":"Total grid-enabled service-desk"}]

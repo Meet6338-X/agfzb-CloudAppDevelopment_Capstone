@@ -13,4 +13,5 @@ echo "Making migrations and migrating the database. "
 python manage.py makemigrations djangoapp --noinput
 python manage.py migrate --noinput
 python manage.py seed_carmakes
+python create_root_user.py
 exec "$@"
