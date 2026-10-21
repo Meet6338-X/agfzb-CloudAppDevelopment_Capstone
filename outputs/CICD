@@ -1,217 +1,515 @@
-﻿theia@theia-devshahm:/home/project$ gh workflow run linter.yml --repo Meet6338-X/agfzb-CloudAppDevelopment_Capstone --ref master
+# Continuous Integration / Continuous Delivery - GitHub Actions workflow output
+# Repository : https://github.com/Meet6338-X/xrwvm-fullstack_developer_capstone
+# Workflow   : .github/workflows/linter.yml   (workflow name: 'Lint Code')
+# Run id     : 39628438944
+# Run URL    : https://github.com/Meet6338-X/xrwvm-fullstack_developer_capstone/actions/runs/39628438944
+# Conclusion : success - all 7 jobs and all of their steps completed successfully
+#
+# The workflow lints the JavaScript cloud function, the Python cloud
+# function, the Django server and the Django application with pylint and
+# eslint, and it builds the application container image.
 
-theia@theia-devshahm:/home/project$ gh run list --repo Meet6338-X/agfzb-CloudAppDevelopment_Capstone --limit 1
-completed	success	Lint Code	Lint Code	master	workflow_dispatch	39562718311	28s	2026-10-21T07:32:37Z
+Command: gh workflow run linter.yml --repo Meet6338-X/xrwvm-fullstack_developer_capstone --ref master
 
-theia@theia-devshahm:/home/project$ gh run view 39562718311 --repo Meet6338-X/agfzb-CloudAppDevelopment_Capstone
+Command: gh run list --repo Meet6338-X/xrwvm-fullstack_developer_capstone --limit 4
+completed	success	Lint Code	Lint Code	master	workflow_dispatch	39628438944	24s	2026-10-21T15:44:35Z
+completed	success	Lint Code	Lint Code	master	workflow_dispatch	39627678584	28s	2026-10-21T15:39:40Z
+completed	success	Lint Code	Lint Code	master	workflow_dispatch	39627456975	41s	2026-10-21T15:38:11Z
+completed	success	Lint Code	Lint Code	master	workflow_dispatch	39626784014	30s	2026-10-21T15:33:36Z
 
-Γ£ô master Lint Code ┬╖ 39562718311
-Triggered via workflow_dispatch about 4 minutes ago
+Command: gh run view 39628438944 --repo Meet6338-X/xrwvm-fullstack_developer_capstone
+
+OK   master Lint Code * 39628438944
+Triggered via workflow_dispatch about 1 minute ago
 
 JOBS
-Γ£ô Linting Django Server in 11s (ID 119097535563)
-Γ£ô Linting JavaScript Function in 12s (ID 119097535664)
-Γ£ô Linting Dealership Cloud Function in 13s (ID 119097535708)
-Γ£ô Linting Python Function in 9s (ID 119097535723)
-Γ£ô Build the application container image in 19s (ID 119097535812)
-Γ£ô Linting Django Application in 23s (ID 119097535857)
-Γ£ô Linting Reviews Cloud Function in 12s (ID 119097536034)
-
-ANNOTATIONS
-! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Linting Django Server: .github#2
-
-- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
-Linting Django Server: .github#1
-
-! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-node@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Linting JavaScript Function: .github#2
-
-- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
-Linting JavaScript Function: .github#1
-
-! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-node@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Linting Dealership Cloud Function: .github#2
-
-- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
-Linting Dealership Cloud Function: .github#1
-
-! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Linting Python Function: .github#2
-
-- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
-Linting Python Function: .github#1
-
-! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Build the application container image: .github#2
-
-- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
-Build the application container image: .github#1
-
-! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Linting Django Application: .github#2
-
-- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
-Linting Django Application: .github#1
-
-! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Linting Reviews Cloud Function: .github#2
-
-- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
-Linting Reviews Cloud Function: .github#1
+OK   Build the application container image in 19s (ID 119319880965)
+OK   Linting Django Application in 16s (ID 119319881354)
+OK   Linting Dealership Cloud Function in 10s (ID 119319881369)
+OK   Linting Reviews Cloud Function in 9s (ID 119319881440)
+OK   Linting JavaScript Function in 11s (ID 119319881446)
+OK   Linting Django Server in 10s (ID 119319881718)
+OK   Linting Python Function in 10s (ID 119319881725)
 
 
-For more information about a job, try: gh run view --job=<job-id>
-View this run on GitHub: https://github.com/Meet6338-X/agfzb-CloudAppDevelopment_Capstone/actions/runs/39562718311
 
-theia@theia-devshahm:/home/project$ gh run view 39562718311 --repo Meet6338-X/agfzb-CloudAppDevelopment_Capstone --log | tail -n 150
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8380342Z Receiving objects:  99% (274/276)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8381344Z Receiving objects: 100% (276/276)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8382679Z Receiving objects: 100% (276/276), 1.09 MiB | 24.72 MiB/s, done.
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8384602Z Resolving deltas:   0% (0/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8385741Z Resolving deltas:   3% (1/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8386918Z Resolving deltas:   6% (2/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8388201Z Resolving deltas:   9% (3/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8396421Z Resolving deltas:  12% (4/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8398269Z Resolving deltas:  16% (5/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8399613Z Resolving deltas:  19% (6/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8400479Z Resolving deltas:  22% (7/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8401074Z Resolving deltas:  25% (8/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8401669Z Resolving deltas:  29% (9/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8402391Z Resolving deltas:  32% (10/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8402992Z Resolving deltas:  35% (11/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8403567Z Resolving deltas:  38% (12/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8404135Z Resolving deltas:  41% (13/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8404699Z Resolving deltas:  45% (14/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8405289Z Resolving deltas:  48% (15/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8406139Z Resolving deltas:  51% (16/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8406733Z Resolving deltas:  54% (17/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8407667Z Resolving deltas:  58% (18/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8408267Z Resolving deltas:  61% (19/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8408859Z Resolving deltas:  64% (20/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8409433Z Resolving deltas:  67% (21/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8410012Z Resolving deltas:  70% (22/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8410594Z Resolving deltas:  74% (23/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8411168Z Resolving deltas:  77% (24/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8411751Z Resolving deltas:  80% (25/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8412333Z Resolving deltas:  83% (26/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8412908Z Resolving deltas:  87% (27/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8413484Z Resolving deltas:  90% (28/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8414059Z Resolving deltas:  93% (29/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8414644Z Resolving deltas:  96% (30/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8415216Z Resolving deltas: 100% (31/31)
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8415817Z Resolving deltas: 100% (31/31), done.
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8525217Z From https://github.com/Meet6338-X/agfzb-CloudAppDevelopment_Capstone
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8526447Z  * [new ref]         87212595c6a61fea063523dad225a82b177cd7ef -> origin/master
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8532118Z ##[endgroup]
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8533010Z ##[group]Determining the checkout info
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8534534Z ##[endgroup]
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8535382Z ##[group]Checking out the ref
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8539398Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8782009Z Reset branch 'master'
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8788119Z branch 'master' set up to track 'origin/master'.
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8833850Z ##[endgroup]
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8836915Z [command]/usr/bin/git log -1 --format='%H'
-Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8862279Z '87212595c6a61fea063523dad225a82b177cd7ef'
-Linting Reviews Cloud Function	Set up Python 3.11	∩╗┐2026-10-21T07:32:43.9166111Z ##[group]Run actions/setup-python@v4
-Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:43.9166815Z with:
-Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:43.9167637Z   python-version: 3.11
-Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:43.9168431Z   check-latest: false
-Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:43.9172560Z   token: ***
-Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:43.9173049Z   update-environment: true
-Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:43.9173600Z   allow-prereleases: false
-Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:43.9174126Z ##[endgroup]
-Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:44.0562642Z ##[group]Installed versions
-Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:44.1142789Z (node:2249) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:44.1145766Z (Use `node --trace-deprecation ...` to show where the warning was created)
-Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:44.1147860Z Successfully set up CPython (3.11.17)
-Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:44.1149637Z ##[endgroup]
-Linting Reviews Cloud Function	Install dependencies	∩╗┐2026-10-21T07:32:44.1375728Z ##[group]Run python -m pip install --upgrade pip
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1377803Z ^[[36;1mpython -m pip install --upgrade pip^[[0m
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1379236Z ^[[36;1mpip install pylint^[[0m
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1380996Z ^[[36;1mif [ -f requirements.txt ]; then pip install -r requirements.txt; fi^[[0m
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1853096Z shell: /usr/bin/bash -e {0}
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1853983Z env:
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1854806Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1856399Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1858078Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1859371Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1860659Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1862015Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1863111Z ##[endgroup]
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:46.8412002Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (26.2.1)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:46.9605431Z Collecting pip
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.0107272Z   Downloading pip-26.2.2-py3-none-any.whl.metadata (4.6 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.0189017Z Downloading pip-26.2.2-py3-none-any.whl (1.8 MB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.0887746Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 1.8/1.8 MB 47.4 MB/s  0:00:00
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.2551956Z Installing collected packages: pip
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.2552931Z   Attempting uninstall: pip
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.2567482Z     Found existing installation: pip 26.2.1
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.3279807Z     Uninstalling pip-26.2.1:
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.3344077Z       Successfully uninstalled pip-26.2.1
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:48.2265398Z Successfully installed pip-26.2.2
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.1795731Z Collecting pylint
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.2281646Z   Downloading pylint-4.1.3-py3-none-any.whl.metadata (12 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.2579454Z Collecting astroid<=4.4,>=4.3.4 (from pylint)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.2616649Z   Downloading astroid-4.3.4-py3-none-any.whl.metadata (4.4 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.2850235Z Collecting dill>=0.3.6 (from pylint)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.2887360Z   Downloading dill-0.4.1-py3-none-any.whl.metadata (10 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3231026Z Collecting isort!=5.13,<10,>=5 (from pylint)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3277598Z   Downloading isort-9.0.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3400827Z Collecting mccabe<0.8,>=0.6 (from pylint)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3435159Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3647996Z Collecting platformdirs>=2.2 (from pylint)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3684113Z   Downloading platformdirs-4.13.5-py3-none-any.whl.metadata (5.5 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3853843Z Collecting tomlkit>=0.10.1 (from pylint)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3888840Z   Downloading tomlkit-0.15.2-py3-none-any.whl.metadata (3.4 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4009313Z Collecting mypy-extensions>=1.1.0 (from isort!=5.13,<10,>=5->pylint)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4046991Z   Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4133401Z Downloading pylint-4.1.3-py3-none-any.whl (588 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4293126Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 589.0/589.0 kB 59.3 MB/s  0:00:00
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4334945Z Downloading astroid-4.3.4-py3-none-any.whl (288 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4407301Z Downloading isort-9.0.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.6 MB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4577347Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 1.6/1.6 MB 100.9 MB/s  0:00:00
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4611619Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4661322Z Downloading dill-0.4.1-py3-none-any.whl (120 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4713957Z Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4766621Z Downloading platformdirs-4.13.5-py3-none-any.whl (32 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4817602Z Downloading tomlkit-0.15.2-py3-none-any.whl (52 kB)
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.5291120Z Installing collected packages: tomlkit, platformdirs, mypy-extensions, mccabe, dill, astroid, isort, pylint
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:50.3077280Z 
-Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:50.3088698Z Successfully installed astroid-4.3.4 dill-0.4.1 isort-9.0.2 mccabe-0.7.0 mypy-extensions-1.1.0 platformdirs-4.13.5 pylint-4.1.3 tomlkit-0.15.2
-Linting Reviews Cloud Function	Lint with Pylint	∩╗┐2026-10-21T07:32:50.3703725Z ##[group]Run pylint *.py
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3704038Z ^[[36;1mpylint *.py^[[0m
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3771504Z shell: /usr/bin/bash -e {0}
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3771775Z env:
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3772053Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3772529Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3772989Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3773398Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3773806Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3774219Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3774565Z ##[endgroup]
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.6353464Z pylint: Command line or configuration file:1: UserWarning: 'BaseException' is not a proper value for the 'overgeneral-exceptions' option. Use fully qualified name (maybe 'builtins.BaseException' ?) instead. This will cease to be checked at runtime when the configuration upgrader is released.
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.6357588Z pylint: Command line or configuration file:1: UserWarning: 'Exception' is not a proper value for the 'overgeneral-exceptions' option. Use fully qualified name (maybe 'builtins.Exception' ?) instead. This will cease to be checked at runtime when the configuration upgrader is released.
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:51.3642196Z 
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:51.3642757Z ------------------------------------
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:51.3643434Z Your code has been rated at 10.00/10
-Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:51.3643814Z 
-Linting Reviews Cloud Function	Post Set up Python 3.11	∩╗┐2026-10-21T07:32:51.6137774Z Post job cleanup.
-Linting Reviews Cloud Function	Post Set up Python 3.11	2026-10-21T07:32:51.7365436Z (node:2339) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-Linting Reviews Cloud Function	Post Set up Python 3.11	2026-10-21T07:32:51.7366702Z (Use `node --trace-deprecation ...` to show where the warning was created)
-Linting Reviews Cloud Function	Post Run actions/checkout@v3	∩╗┐2026-10-21T07:32:51.7584318Z Post job cleanup.
-Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8294971Z (node:2347) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8295741Z (Use `node --trace-deprecation ...` to show where the warning was created)
-Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8331957Z [command]/usr/bin/git version
-Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8368452Z git version 2.55.0
-Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8408914Z Temporarily overriding HOME='/home/runner/work/_temp/51ca16c0-abd5-4603-ad6e-4df69df87173' before making global git config changes
-Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8410371Z Adding repository directory to the temporary git global config as a safe directory
-Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8415061Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/agfzb-CloudAppDevelopment_Capstone/agfzb-CloudAppDevelopment_Capstone
-Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8450511Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8483229Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8713902Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8739665Z http.https://github.com/.extraheader
-Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8750899Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8785530Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-Linting Reviews Cloud Function	Complete job	∩╗┐2026-10-21T07:32:51.9154127Z Cleaning up orphan processes
-Linting Reviews Cloud Function	Complete job	2026-10-21T07:32:51.9569410Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+==============================================================================
+JOB: Linting Python Function   (ID 119319881725)
+Command: gh run view 39628438944 --repo Meet6338-X/xrwvm-fullstack_developer_capstone --job 119319881725 --log
+==============================================================================
+Linting Python Function	Set up job	 2026-10-21T15:44:41.1180143Z Current runner version: '2.338.0'
+Linting Python Function	Set up job	2026-10-21T15:44:41.1213617Z 24.04.5
+Linting Python Function	Set up job	2026-10-21T15:44:41.1617695Z Prepare all required actions
+Linting Python Function	Set up job	2026-10-21T15:44:41.1670547Z Getting action download info
+Linting Python Function	Set up job	2026-10-21T15:44:41.4737150Z Download action repository 'actions/checkout@v3' (SHA:a37ce9120846195fa4ece8f58b268e6043cb2f26)
+Linting Python Function	Set up job	2026-10-21T15:44:41.6106383Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Linting Python Function	Set up job	2026-10-21T15:44:41.9573515Z Complete job name: Linting Python Function
+Linting Python Function	Run actions/checkout@v3	2026-10-21T15:44:42.0406302Z with:
+Linting Python Function	Run actions/checkout@v3	2026-10-21T15:44:42.0407087Z   repository: Meet6338-X/xrwvm-fullstack_developer_capstone
+Linting Python Function	Run actions/checkout@v3	2026-10-21T15:44:42.0411913Z   token: ***
+Linting Python Function	Run actions/checkout@v3	2026-10-21T15:44:42.0412568Z   ssh-strict: true
+    ... [389 lines of dependency installation output omitted] ...
+Linting Python Function	Run actions/checkout@v3	2026-10-21T15:44:43.3856318Z Reset branch 'master'
+Linting Python Function	Run actions/checkout@v3	2026-10-21T15:44:43.3862862Z branch 'master' set up to track 'origin/master'.
+Linting Python Function	Run actions/checkout@v3	2026-10-21T15:44:43.3906695Z [command]/usr/bin/git log -1 --format='%H'
+Linting Python Function	Run actions/checkout@v3	2026-10-21T15:44:43.3928340Z '6687d5f4d3c1700ffe9f555fb5dde9b1396dcffb'
+Linting Python Function	Set up Python 3.11	2026-10-21T15:44:43.4263616Z with:
+Linting Python Function	Set up Python 3.11	2026-10-21T15:44:43.4264374Z   python-version: 3.11
+Linting Python Function	Set up Python 3.11	2026-10-21T15:44:43.4265252Z   check-latest: false
+Linting Python Function	Set up Python 3.11	2026-10-21T15:44:43.4274104Z   token: ***
+Linting Python Function	Set up Python 3.11	2026-10-21T15:44:43.4274917Z   update-environment: true
+Linting Python Function	Set up Python 3.11	2026-10-21T15:44:43.4275859Z   allow-prereleases: false
+Linting Python Function	Set up Python 3.11	2026-10-21T15:44:43.5739185Z (node:2208) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Python Function	Set up Python 3.11	2026-10-21T15:44:43.5743243Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Python Function	Set up Python 3.11	2026-10-21T15:44:43.5745636Z Successfully set up CPython (3.11.17)
+Linting Python Function	Install dependencies	2026-10-21T15:44:43.5921145Z ^[[36;1mpython -m pip install --upgrade pip^[[0m
+Linting Python Function	Install dependencies	2026-10-21T15:44:43.5922576Z ^[[36;1mpip install pylint^[[0m
+Linting Python Function	Install dependencies	2026-10-21T15:44:43.5923912Z ^[[36;1mif [ -f requirements.txt ]; then pip install -r requirements.txt; fi^[[0m
+Linting Python Function	Install dependencies	2026-10-21T15:44:43.6115714Z shell: /usr/bin/bash -e {0}
+    ... [43 lines of dependency installation output omitted] ...
+Linting Python Function	Install dependencies	2026-10-21T15:44:46.3416209Z Downloading tomlkit-0.15.2-py3-none-any.whl (52 kB)
+Linting Python Function	Install dependencies	2026-10-21T15:44:46.3855995Z Installing collected packages: tomlkit, platformdirs, mypy-extensions, mccabe, dill, astroid, isort, pylint
+Linting Python Function	Install dependencies	2026-10-21T15:44:47.0559472Z 
+Linting Python Function	Install dependencies	2026-10-21T15:44:47.0571137Z Successfully installed astroid-4.3.4 dill-0.4.1 isort-9.0.2 mccabe-0.7.0 mypy-extensions-1.1.0 platformdirs-4.13.5 pylint-4.1.3 tomlkit-0.15.2
+Linting Python Function	Lint with Pylint	2026-10-21T15:44:47.1437453Z ^[[36;1mpylint *.py^[[0m
+Linting Python Function	Lint with Pylint	2026-10-21T15:44:47.1472491Z shell: /usr/bin/bash -e {0}
+Linting Python Function	Lint with Pylint	2026-10-21T15:44:47.1472777Z env:
+Linting Python Function	Lint with Pylint	2026-10-21T15:44:47.1473053Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Python Function	Lint with Pylint	2026-10-21T15:44:47.1473481Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+Linting Python Function	Lint with Pylint	2026-10-21T15:44:47.1473893Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Python Function	Lint with Pylint	2026-10-21T15:44:47.1474271Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Python Function	Lint with Pylint	2026-10-21T15:44:47.1474633Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Python Function	Lint with Pylint	2026-10-21T15:44:47.1475000Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+Linting Python Function	Lint with Pylint	2026-10-21T15:44:47.5142957Z 
+Linting Python Function	Lint with Pylint	2026-10-21T15:44:47.5143649Z ------------------------------------
+Linting Python Function	Lint with Pylint	2026-10-21T15:44:47.5144061Z Your code has been rated at 10.00/10
+Linting Python Function	Lint with Pylint	2026-10-21T15:44:47.5144250Z 
+Linting Python Function	Post Set up Python 3.11	 2026-10-21T15:44:47.6384770Z Post job cleanup.
+Linting Python Function	Post Set up Python 3.11	2026-10-21T15:44:47.7707664Z (node:2271) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Python Function	Post Set up Python 3.11	2026-10-21T15:44:47.7709480Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Python Function	Post Run actions/checkout@v3	 2026-10-21T15:44:47.8055958Z Post job cleanup.
+Linting Python Function	Post Run actions/checkout@v3	2026-10-21T15:44:47.8778847Z (node:2279) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Python Function	Post Run actions/checkout@v3	2026-10-21T15:44:47.8780540Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Python Function	Post Run actions/checkout@v3	2026-10-21T15:44:47.8808397Z [command]/usr/bin/git version
+Linting Python Function	Post Run actions/checkout@v3	2026-10-21T15:44:47.8842571Z git version 2.55.0
+Linting Python Function	Post Run actions/checkout@v3	2026-10-21T15:44:47.8878997Z Temporarily overriding HOME='/home/runner/work/_temp/db6bdebc-a711-4c88-8535-9ea10b28dc62' before making global git config changes
+Linting Python Function	Post Run actions/checkout@v3	2026-10-21T15:44:47.8881480Z Adding repository directory to the temporary git global config as a safe directory
+Linting Python Function	Post Run actions/checkout@v3	2026-10-21T15:44:47.8885100Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
+Linting Python Function	Post Run actions/checkout@v3	2026-10-21T15:44:47.8928159Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Linting Python Function	Post Run actions/checkout@v3	2026-10-21T15:44:47.8963898Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Linting Python Function	Post Run actions/checkout@v3	2026-10-21T15:44:47.9163905Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Linting Python Function	Post Run actions/checkout@v3	2026-10-21T15:44:47.9352155Z http.https://github.com/.extraheader
+Linting Python Function	Post Run actions/checkout@v3	2026-10-21T15:44:47.9365376Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Linting Python Function	Post Run actions/checkout@v3	2026-10-21T15:44:47.9405622Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Linting Python Function	Complete job	 2026-10-21T15:44:47.9747140Z Cleaning up orphan processes
+Linting Python Function	Complete job	2026-10-21T15:44:48.0033366Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
+==============================================================================
+JOB: Linting Reviews Cloud Function   (ID 119319881440)
+Command: gh run view 39628438944 --repo Meet6338-X/xrwvm-fullstack_developer_capstone --job 119319881440 --log
+==============================================================================
+Linting Reviews Cloud Function	Set up job	 2026-10-21T15:44:40.4770982Z Current runner version: '2.338.0'
+Linting Reviews Cloud Function	Set up job	2026-10-21T15:44:40.4799699Z 24.04.5
+Linting Reviews Cloud Function	Set up job	2026-10-21T15:44:40.5741146Z Prepare all required actions
+Linting Reviews Cloud Function	Set up job	2026-10-21T15:44:40.5779895Z Getting action download info
+Linting Reviews Cloud Function	Set up job	2026-10-21T15:44:40.7227841Z Download action repository 'actions/checkout@v3' (SHA:a37ce9120846195fa4ece8f58b268e6043cb2f26)
+Linting Reviews Cloud Function	Set up job	2026-10-21T15:44:41.1279230Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Linting Reviews Cloud Function	Set up job	2026-10-21T15:44:41.3599703Z Complete job name: Linting Reviews Cloud Function
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T15:44:41.4180789Z with:
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T15:44:41.4181234Z   repository: Meet6338-X/xrwvm-fullstack_developer_capstone
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T15:44:41.4184734Z   token: ***
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T15:44:41.4185086Z   ssh-strict: true
+    ... [389 lines of dependency installation output omitted] ...
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T15:44:42.1988559Z Reset branch 'master'
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T15:44:42.1994373Z branch 'master' set up to track 'origin/master'.
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T15:44:42.2033280Z [command]/usr/bin/git log -1 --format='%H'
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T15:44:42.2052373Z '6687d5f4d3c1700ffe9f555fb5dde9b1396dcffb'
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T15:44:42.2336899Z with:
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T15:44:42.2337576Z   python-version: 3.11
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T15:44:42.2338349Z   check-latest: false
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T15:44:42.2345266Z   token: ***
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T15:44:42.2345986Z   update-environment: true
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T15:44:42.2346788Z   allow-prereleases: false
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T15:44:42.3457948Z (node:2050) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T15:44:42.3459928Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T15:44:42.3461895Z Successfully set up CPython (3.11.17)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T15:44:42.3643112Z ^[[36;1mpython -m pip install --upgrade pip^[[0m
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T15:44:42.3644071Z ^[[36;1mpip install pylint^[[0m
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T15:44:42.3645135Z ^[[36;1mif [ -f requirements.txt ]; then pip install -r requirements.txt; fi^[[0m
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T15:44:42.3888389Z shell: /usr/bin/bash -e {0}
+    ... [43 lines of dependency installation output omitted] ...
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T15:44:44.8219563Z Downloading tomlkit-0.15.2-py3-none-any.whl (52 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T15:44:44.8572346Z Installing collected packages: tomlkit, platformdirs, mypy-extensions, mccabe, dill, astroid, isort, pylint
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T15:44:45.4623698Z 
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T15:44:45.4634710Z Successfully installed astroid-4.3.4 dill-0.4.1 isort-9.0.2 mccabe-0.7.0 mypy-extensions-1.1.0 platformdirs-4.13.5 pylint-4.1.3 tomlkit-0.15.2
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T15:44:45.6258068Z ^[[36;1mpylint *.py^[[0m
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T15:44:45.6317248Z shell: /usr/bin/bash -e {0}
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T15:44:45.6317458Z env:
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T15:44:45.6317694Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T15:44:45.6318046Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T15:44:45.6318400Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T15:44:45.6318707Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T15:44:45.6319005Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T15:44:45.6319304Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T15:44:46.4103147Z 
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T15:44:46.4103988Z ------------------------------------
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T15:44:46.4104427Z Your code has been rated at 10.00/10
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T15:44:46.4104657Z 
+Linting Reviews Cloud Function	Post Set up Python 3.11	 2026-10-21T15:44:46.5867076Z Post job cleanup.
+Linting Reviews Cloud Function	Post Set up Python 3.11	2026-10-21T15:44:46.6830030Z (node:2113) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Reviews Cloud Function	Post Set up Python 3.11	2026-10-21T15:44:46.6830704Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	 2026-10-21T15:44:46.7006729Z Post job cleanup.
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T15:44:46.7582508Z (node:2121) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T15:44:46.7583409Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T15:44:46.7605001Z [command]/usr/bin/git version
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T15:44:46.7634644Z git version 2.55.0
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T15:44:46.7662161Z Temporarily overriding HOME='/home/runner/work/_temp/3b58dded-fc3a-413c-83f9-097f6b22fa20' before making global git config changes
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T15:44:46.7663134Z Adding repository directory to the temporary git global config as a safe directory
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T15:44:46.7666058Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T15:44:46.7694009Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T15:44:46.7718431Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T15:44:46.7908058Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T15:44:46.7928126Z http.https://github.com/.extraheader
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T15:44:46.7934970Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T15:44:46.7959822Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Linting Reviews Cloud Function	Complete job	 2026-10-21T15:44:46.8264759Z Cleaning up orphan processes
+Linting Reviews Cloud Function	Complete job	2026-10-21T15:44:46.8510273Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
+==============================================================================
+JOB: Linting JavaScript Function   (ID 119319881446)
+Command: gh run view 39628438944 --repo Meet6338-X/xrwvm-fullstack_developer_capstone --job 119319881446 --log
+==============================================================================
+Linting JavaScript Function	Set up job	 2026-10-21T15:44:40.2883450Z Current runner version: '2.338.0'
+Linting JavaScript Function	Set up job	2026-10-21T15:44:40.2908631Z 24.04.5
+Linting JavaScript Function	Set up job	2026-10-21T15:44:40.3133660Z Prepare all required actions
+Linting JavaScript Function	Set up job	2026-10-21T15:44:40.3165751Z Getting action download info
+Linting JavaScript Function	Set up job	2026-10-21T15:44:40.6426129Z Download action repository 'actions/setup-node@v3' (SHA:3235b876344d2a9aa001b8d1453c930bba69e610)
+Linting JavaScript Function	Set up job	2026-10-21T15:44:40.9031386Z Download action repository 'actions/checkout@v3' (SHA:a37ce9120846195fa4ece8f58b268e6043cb2f26)
+Linting JavaScript Function	Set up job	2026-10-21T15:44:41.0161409Z Complete job name: Linting JavaScript Function
+Linting JavaScript Function	Install NodeJS	2026-10-21T15:44:41.0632145Z with:
+Linting JavaScript Function	Install NodeJS	2026-10-21T15:44:41.0632390Z   node-version: 16
+Linting JavaScript Function	Install NodeJS	2026-10-21T15:44:41.0632648Z   always-auth: false
+Linting JavaScript Function	Install NodeJS	2026-10-21T15:44:41.0632905Z   check-latest: false
+    ... [7 lines of dependency installation output omitted] ...
+Linting JavaScript Function	Install NodeJS	2026-10-21T15:44:42.8808170Z Adding to the cache ...
+Linting JavaScript Function	Install NodeJS	2026-10-21T15:44:44.0152892Z node: v16.20.2
+Linting JavaScript Function	Install NodeJS	2026-10-21T15:44:44.0153372Z npm: 8.19.4
+Linting JavaScript Function	Install NodeJS	2026-10-21T15:44:44.0153534Z yarn: 1.22.22
+Linting JavaScript Function	Code Checkout	2026-10-21T15:44:44.0390731Z with:
+Linting JavaScript Function	Code Checkout	2026-10-21T15:44:44.0390919Z   repository: Meet6338-X/xrwvm-fullstack_developer_capstone
+Linting JavaScript Function	Code Checkout	2026-10-21T15:44:44.0392323Z   token: ***
+Linting JavaScript Function	Code Checkout	2026-10-21T15:44:44.0392463Z   ssh-strict: true
+    ... [389 lines of dependency installation output omitted] ...
+Linting JavaScript Function	Code Checkout	2026-10-21T15:44:45.1718301Z Reset branch 'master'
+Linting JavaScript Function	Code Checkout	2026-10-21T15:44:45.1721816Z branch 'master' set up to track 'origin/master'.
+Linting JavaScript Function	Code Checkout	2026-10-21T15:44:45.1767146Z [command]/usr/bin/git log -1 --format='%H'
+Linting JavaScript Function	Code Checkout	2026-10-21T15:44:45.1788777Z '6687d5f4d3c1700ffe9f555fb5dde9b1396dcffb'
+Linting JavaScript Function	Install Dependencies	2026-10-21T15:44:45.1911745Z ^[[36;1mnpm install^[[0m
+Linting JavaScript Function	Install Dependencies	2026-10-21T15:44:45.2058995Z shell: /usr/bin/bash -e {0}
+Linting JavaScript Function	Install Dependencies	2026-10-21T15:44:46.2875853Z npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+Linting JavaScript Function	Install Dependencies	2026-10-21T15:44:46.3104429Z npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+    ... [14 lines of dependency installation output omitted] ...
+Linting JavaScript Function	Install Dependencies	2026-10-21T15:44:47.1466521Z Some issues need review, and may require choosing
+Linting JavaScript Function	Install Dependencies	2026-10-21T15:44:47.1466713Z a different dependency.
+Linting JavaScript Function	Install Dependencies	2026-10-21T15:44:47.1466832Z 
+Linting JavaScript Function	Install Dependencies	2026-10-21T15:44:47.1466904Z Run `npm audit` for details.
+Linting JavaScript Function	Code Linting	2026-10-21T15:44:47.1647694Z ^[[36;1mnpm run lint^[[0m
+Linting JavaScript Function	Code Linting	2026-10-21T15:44:47.1692513Z shell: /usr/bin/bash -e {0}
+Linting JavaScript Function	Code Linting	2026-10-21T15:44:47.3688436Z 
+Linting JavaScript Function	Code Linting	2026-10-21T15:44:47.3689010Z > sample@1.0.0 lint
+Linting JavaScript Function	Code Linting	2026-10-21T15:44:47.3689458Z > npx eslint . --ext .js --ignore-pattern node_modules/
+Linting JavaScript Function	Code Linting	2026-10-21T15:44:47.3689688Z 
+Linting JavaScript Function	Post Code Checkout	 2026-10-21T15:44:47.7859385Z Post job cleanup.
+Linting JavaScript Function	Post Code Checkout	2026-10-21T15:44:47.8332712Z (node:2145) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting JavaScript Function	Post Code Checkout	2026-10-21T15:44:47.8333226Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting JavaScript Function	Post Code Checkout	2026-10-21T15:44:47.8349842Z [command]/usr/bin/git version
+Linting JavaScript Function	Post Code Checkout	2026-10-21T15:44:47.8380109Z git version 2.55.0
+Linting JavaScript Function	Post Code Checkout	2026-10-21T15:44:47.8403341Z Temporarily overriding HOME='/home/runner/work/_temp/6982671b-b26b-416d-b018-7a7df989a1a2' before making global git config changes
+Linting JavaScript Function	Post Code Checkout	2026-10-21T15:44:47.8404130Z Adding repository directory to the temporary git global config as a safe directory
+Linting JavaScript Function	Post Code Checkout	2026-10-21T15:44:47.8406330Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
+Linting JavaScript Function	Post Code Checkout	2026-10-21T15:44:47.8439087Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Linting JavaScript Function	Post Code Checkout	2026-10-21T15:44:47.8466439Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Linting JavaScript Function	Post Code Checkout	2026-10-21T15:44:47.8659786Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Linting JavaScript Function	Post Code Checkout	2026-10-21T15:44:47.8682652Z http.https://github.com/.extraheader
+Linting JavaScript Function	Post Code Checkout	2026-10-21T15:44:47.8690753Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Linting JavaScript Function	Post Code Checkout	2026-10-21T15:44:47.8719490Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Linting JavaScript Function	Post Install NodeJS	 2026-10-21T15:44:47.9024700Z Post job cleanup.
+Linting JavaScript Function	Post Install NodeJS	2026-10-21T15:44:47.9862047Z (node:2214) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting JavaScript Function	Post Install NodeJS	2026-10-21T15:44:47.9863007Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting JavaScript Function	Complete job	 2026-10-21T15:44:48.0012382Z Cleaning up orphan processes
+Linting JavaScript Function	Complete job	2026-10-21T15:44:48.0249366Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-node@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
+==============================================================================
+JOB: Linting Django Server   (ID 119319881718)
+Command: gh run view 39628438944 --repo Meet6338-X/xrwvm-fullstack_developer_capstone --job 119319881718 --log
+==============================================================================
+Linting Django Server	Set up job	 2026-10-21T15:44:41.0491365Z Current runner version: '2.338.0'
+Linting Django Server	Set up job	2026-10-21T15:44:41.0525042Z 24.04.5
+Linting Django Server	Set up job	2026-10-21T15:44:41.0879222Z Prepare all required actions
+Linting Django Server	Set up job	2026-10-21T15:44:41.0928659Z Getting action download info
+Linting Django Server	Set up job	2026-10-21T15:44:41.4705310Z Download action repository 'actions/checkout@v3' (SHA:a37ce9120846195fa4ece8f58b268e6043cb2f26)
+Linting Django Server	Set up job	2026-10-21T15:44:41.5848082Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Linting Django Server	Set up job	2026-10-21T15:44:41.8001953Z Complete job name: Linting Django Server
+Linting Django Server	Run actions/checkout@v3	2026-10-21T15:44:41.8746917Z with:
+Linting Django Server	Run actions/checkout@v3	2026-10-21T15:44:41.8747512Z   repository: Meet6338-X/xrwvm-fullstack_developer_capstone
+Linting Django Server	Run actions/checkout@v3	2026-10-21T15:44:41.8751522Z   token: ***
+Linting Django Server	Run actions/checkout@v3	2026-10-21T15:44:41.8751971Z   ssh-strict: true
+    ... [389 lines of dependency installation output omitted] ...
+Linting Django Server	Run actions/checkout@v3	2026-10-21T15:44:42.7986732Z Reset branch 'master'
+Linting Django Server	Run actions/checkout@v3	2026-10-21T15:44:42.7992719Z branch 'master' set up to track 'origin/master'.
+Linting Django Server	Run actions/checkout@v3	2026-10-21T15:44:42.8036161Z [command]/usr/bin/git log -1 --format='%H'
+Linting Django Server	Run actions/checkout@v3	2026-10-21T15:44:42.8058026Z '6687d5f4d3c1700ffe9f555fb5dde9b1396dcffb'
+Linting Django Server	Set up Python 3.11	2026-10-21T15:44:42.8354650Z with:
+Linting Django Server	Set up Python 3.11	2026-10-21T15:44:42.8355084Z   python-version: 3.11
+Linting Django Server	Set up Python 3.11	2026-10-21T15:44:42.8355607Z   check-latest: false
+Linting Django Server	Set up Python 3.11	2026-10-21T15:44:42.8360072Z   token: ***
+Linting Django Server	Set up Python 3.11	2026-10-21T15:44:42.8360738Z   update-environment: true
+Linting Django Server	Set up Python 3.11	2026-10-21T15:44:42.8361306Z   allow-prereleases: false
+Linting Django Server	Set up Python 3.11	2026-10-21T15:44:42.9800076Z (node:2244) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Django Server	Set up Python 3.11	2026-10-21T15:44:42.9803300Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Django Server	Set up Python 3.11	2026-10-21T15:44:42.9805392Z Successfully set up CPython (3.11.17)
+Linting Django Server	Install dependencies	2026-10-21T15:44:42.9978588Z ^[[36;1mpython -m pip install --upgrade pip^[[0m
+Linting Django Server	Install dependencies	2026-10-21T15:44:42.9979974Z ^[[36;1mpip install pylint^[[0m
+Linting Django Server	Install dependencies	2026-10-21T15:44:42.9981909Z ^[[36;1mif [ -f requirements.txt ]; then pip install -r requirements.txt; fi^[[0m
+Linting Django Server	Install dependencies	2026-10-21T15:44:43.0301355Z shell: /usr/bin/bash -e {0}
+    ... [43 lines of dependency installation output omitted] ...
+Linting Django Server	Install dependencies	2026-10-21T15:44:45.6689025Z Downloading tomlkit-0.15.2-py3-none-any.whl (52 kB)
+Linting Django Server	Install dependencies	2026-10-21T15:44:45.7156379Z Installing collected packages: tomlkit, platformdirs, mypy-extensions, mccabe, dill, astroid, isort, pylint
+Linting Django Server	Install dependencies	2026-10-21T15:44:46.4770825Z 
+Linting Django Server	Install dependencies	2026-10-21T15:44:46.4781785Z Successfully installed astroid-4.3.4 dill-0.4.1 isort-9.0.2 mccabe-0.7.0 mypy-extensions-1.1.0 platformdirs-4.13.5 pylint-4.1.3 tomlkit-0.15.2
+Linting Django Server	Lint with Pylint	2026-10-21T15:44:46.5345668Z ^[[36;1mpylint *.py^[[0m
+Linting Django Server	Lint with Pylint	2026-10-21T15:44:46.5411722Z shell: /usr/bin/bash -e {0}
+Linting Django Server	Lint with Pylint	2026-10-21T15:44:46.5411976Z env:
+Linting Django Server	Lint with Pylint	2026-10-21T15:44:46.5412240Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Django Server	Lint with Pylint	2026-10-21T15:44:46.5412675Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+Linting Django Server	Lint with Pylint	2026-10-21T15:44:46.5413100Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Django Server	Lint with Pylint	2026-10-21T15:44:46.5413480Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Django Server	Lint with Pylint	2026-10-21T15:44:46.5413854Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Django Server	Lint with Pylint	2026-10-21T15:44:46.5414236Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+Linting Django Server	Lint with Pylint	2026-10-21T15:44:47.0609441Z 
+Linting Django Server	Lint with Pylint	2026-10-21T15:44:47.0610070Z ------------------------------------
+Linting Django Server	Lint with Pylint	2026-10-21T15:44:47.0610819Z Your code has been rated at 10.00/10
+Linting Django Server	Lint with Pylint	2026-10-21T15:44:47.0611105Z 
+Linting Django Server	Post Set up Python 3.11	 2026-10-21T15:44:47.1731209Z Post job cleanup.
+Linting Django Server	Post Set up Python 3.11	2026-10-21T15:44:47.2875322Z (node:2308) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Django Server	Post Set up Python 3.11	2026-10-21T15:44:47.2876227Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Django Server	Post Run actions/checkout@v3	 2026-10-21T15:44:47.3082446Z Post job cleanup.
+Linting Django Server	Post Run actions/checkout@v3	2026-10-21T15:44:47.3760595Z (node:2316) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Django Server	Post Run actions/checkout@v3	2026-10-21T15:44:47.3761475Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Django Server	Post Run actions/checkout@v3	2026-10-21T15:44:47.3796110Z [command]/usr/bin/git version
+Linting Django Server	Post Run actions/checkout@v3	2026-10-21T15:44:47.3830942Z git version 2.55.0
+Linting Django Server	Post Run actions/checkout@v3	2026-10-21T15:44:47.3870190Z Temporarily overriding HOME='/home/runner/work/_temp/89f3bc72-c54b-449e-a0b8-4ce8d792dde0' before making global git config changes
+Linting Django Server	Post Run actions/checkout@v3	2026-10-21T15:44:47.3871877Z Adding repository directory to the temporary git global config as a safe directory
+Linting Django Server	Post Run actions/checkout@v3	2026-10-21T15:44:47.3876339Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
+Linting Django Server	Post Run actions/checkout@v3	2026-10-21T15:44:47.3910274Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Linting Django Server	Post Run actions/checkout@v3	2026-10-21T15:44:47.3940118Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Linting Django Server	Post Run actions/checkout@v3	2026-10-21T15:44:47.4167277Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Linting Django Server	Post Run actions/checkout@v3	2026-10-21T15:44:47.4191484Z http.https://github.com/.extraheader
+Linting Django Server	Post Run actions/checkout@v3	2026-10-21T15:44:47.4200029Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Linting Django Server	Post Run actions/checkout@v3	2026-10-21T15:44:47.4230627Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Linting Django Server	Complete job	 2026-10-21T15:44:47.4578916Z Cleaning up orphan processes
+Linting Django Server	Complete job	2026-10-21T15:44:47.4878234Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
+==============================================================================
+JOB: Linting Dealership Cloud Function   (ID 119319881369)
+Command: gh run view 39628438944 --repo Meet6338-X/xrwvm-fullstack_developer_capstone --job 119319881369 --log
+==============================================================================
+Linting Dealership Cloud Function	Set up job	 2026-10-21T15:44:40.1374643Z Current runner version: '2.338.0'
+Linting Dealership Cloud Function	Set up job	2026-10-21T15:44:40.1398829Z 24.04.5
+Linting Dealership Cloud Function	Set up job	2026-10-21T15:44:40.1622143Z Prepare all required actions
+Linting Dealership Cloud Function	Set up job	2026-10-21T15:44:40.1664040Z Getting action download info
+Linting Dealership Cloud Function	Set up job	2026-10-21T15:44:40.4201341Z Download action repository 'actions/setup-node@v3' (SHA:3235b876344d2a9aa001b8d1453c930bba69e610)
+Linting Dealership Cloud Function	Set up job	2026-10-21T15:44:40.6498178Z Download action repository 'actions/checkout@v3' (SHA:a37ce9120846195fa4ece8f58b268e6043cb2f26)
+Linting Dealership Cloud Function	Set up job	2026-10-21T15:44:40.7693255Z Complete job name: Linting Dealership Cloud Function
+Linting Dealership Cloud Function	Install NodeJS	2026-10-21T15:44:40.8142113Z with:
+Linting Dealership Cloud Function	Install NodeJS	2026-10-21T15:44:40.8142353Z   node-version: 16
+Linting Dealership Cloud Function	Install NodeJS	2026-10-21T15:44:40.8142608Z   always-auth: false
+Linting Dealership Cloud Function	Install NodeJS	2026-10-21T15:44:40.8142862Z   check-latest: false
+    ... [7 lines of dependency installation output omitted] ...
+Linting Dealership Cloud Function	Install NodeJS	2026-10-21T15:44:42.7640838Z Adding to the cache ...
+Linting Dealership Cloud Function	Install NodeJS	2026-10-21T15:44:43.9287064Z node: v16.20.2
+Linting Dealership Cloud Function	Install NodeJS	2026-10-21T15:44:43.9287588Z npm: 8.19.4
+Linting Dealership Cloud Function	Install NodeJS	2026-10-21T15:44:43.9287996Z yarn: 1.22.22
+Linting Dealership Cloud Function	Code Checkout	2026-10-21T15:44:43.9498161Z with:
+Linting Dealership Cloud Function	Code Checkout	2026-10-21T15:44:43.9498350Z   repository: Meet6338-X/xrwvm-fullstack_developer_capstone
+Linting Dealership Cloud Function	Code Checkout	2026-10-21T15:44:43.9499865Z   token: ***
+Linting Dealership Cloud Function	Code Checkout	2026-10-21T15:44:43.9500017Z   ssh-strict: true
+    ... [389 lines of dependency installation output omitted] ...
+Linting Dealership Cloud Function	Code Checkout	2026-10-21T15:44:45.0625457Z Reset branch 'master'
+Linting Dealership Cloud Function	Code Checkout	2026-10-21T15:44:45.0629943Z branch 'master' set up to track 'origin/master'.
+Linting Dealership Cloud Function	Code Checkout	2026-10-21T15:44:45.0670188Z [command]/usr/bin/git log -1 --format='%H'
+Linting Dealership Cloud Function	Code Checkout	2026-10-21T15:44:45.0688049Z '6687d5f4d3c1700ffe9f555fb5dde9b1396dcffb'
+Linting Dealership Cloud Function	Install Dependencies	2026-10-21T15:44:45.0811434Z ^[[36;1mnpm install^[[0m
+Linting Dealership Cloud Function	Install Dependencies	2026-10-21T15:44:45.1164409Z shell: /usr/bin/bash -e {0}
+Linting Dealership Cloud Function	Install Dependencies	2026-10-21T15:44:46.0528641Z npm WARN deprecated uuid@3.4.0: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+Linting Dealership Cloud Function	Install Dependencies	2026-10-21T15:44:46.0536380Z npm WARN deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+    ... [17 lines of dependency installation output omitted] ...
+Linting Dealership Cloud Function	Install Dependencies	2026-10-21T15:44:46.9749022Z Some issues need review, and may require choosing
+Linting Dealership Cloud Function	Install Dependencies	2026-10-21T15:44:46.9749335Z a different dependency.
+Linting Dealership Cloud Function	Install Dependencies	2026-10-21T15:44:46.9749496Z 
+Linting Dealership Cloud Function	Install Dependencies	2026-10-21T15:44:46.9749926Z Run `npm audit` for details.
+Linting Dealership Cloud Function	Code Linting	2026-10-21T15:44:46.9906875Z ^[[36;1mnpm run lint^[[0m
+Linting Dealership Cloud Function	Code Linting	2026-10-21T15:44:46.9962074Z shell: /usr/bin/bash -e {0}
+Linting Dealership Cloud Function	Code Linting	2026-10-21T15:44:47.1511455Z 
+Linting Dealership Cloud Function	Code Linting	2026-10-21T15:44:47.1511777Z > dealer-dealers-function@1.0.0 lint
+Linting Dealership Cloud Function	Code Linting	2026-10-21T15:44:47.1512231Z > npx eslint . --ext .js --ignore-pattern node_modules/
+Linting Dealership Cloud Function	Code Linting	2026-10-21T15:44:47.1512454Z 
+Linting Dealership Cloud Function	Post Code Checkout	 2026-10-21T15:44:47.6247215Z Post job cleanup.
+Linting Dealership Cloud Function	Post Code Checkout	2026-10-21T15:44:47.6736068Z (node:2130) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Dealership Cloud Function	Post Code Checkout	2026-10-21T15:44:47.6736784Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Dealership Cloud Function	Post Code Checkout	2026-10-21T15:44:47.6762966Z [command]/usr/bin/git version
+Linting Dealership Cloud Function	Post Code Checkout	2026-10-21T15:44:47.6834831Z git version 2.55.0
+Linting Dealership Cloud Function	Post Code Checkout	2026-10-21T15:44:47.6886438Z Temporarily overriding HOME='/home/runner/work/_temp/0fb20f92-8ced-44be-9f28-52f5bfb50e8f' before making global git config changes
+Linting Dealership Cloud Function	Post Code Checkout	2026-10-21T15:44:47.6888233Z Adding repository directory to the temporary git global config as a safe directory
+Linting Dealership Cloud Function	Post Code Checkout	2026-10-21T15:44:47.6890470Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
+Linting Dealership Cloud Function	Post Code Checkout	2026-10-21T15:44:47.6915834Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Linting Dealership Cloud Function	Post Code Checkout	2026-10-21T15:44:47.6937204Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Linting Dealership Cloud Function	Post Code Checkout	2026-10-21T15:44:47.7105585Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Linting Dealership Cloud Function	Post Code Checkout	2026-10-21T15:44:47.7123621Z http.https://github.com/.extraheader
+Linting Dealership Cloud Function	Post Code Checkout	2026-10-21T15:44:47.7129899Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Linting Dealership Cloud Function	Post Code Checkout	2026-10-21T15:44:47.7153574Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Linting Dealership Cloud Function	Post Install NodeJS	 2026-10-21T15:44:47.7425237Z Post job cleanup.
+Linting Dealership Cloud Function	Post Install NodeJS	2026-10-21T15:44:47.8153727Z (node:2199) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Dealership Cloud Function	Post Install NodeJS	2026-10-21T15:44:47.8154268Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Dealership Cloud Function	Complete job	 2026-10-21T15:44:47.8293110Z Cleaning up orphan processes
+Linting Dealership Cloud Function	Complete job	2026-10-21T15:44:47.8505683Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-node@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
+==============================================================================
+JOB: Linting Django Application   (ID 119319881354)
+Command: gh run view 39628438944 --repo Meet6338-X/xrwvm-fullstack_developer_capstone --job 119319881354 --log
+==============================================================================
+Linting Django Application	Set up job	 2026-10-21T15:44:39.9148878Z Current runner version: '2.338.0'
+Linting Django Application	Set up job	2026-10-21T15:44:39.9176557Z 24.04.5
+Linting Django Application	Set up job	2026-10-21T15:44:39.9463766Z Prepare all required actions
+Linting Django Application	Set up job	2026-10-21T15:44:39.9518827Z Getting action download info
+Linting Django Application	Set up job	2026-10-21T15:44:40.1541735Z Download action repository 'actions/checkout@v3' (SHA:a37ce9120846195fa4ece8f58b268e6043cb2f26)
+Linting Django Application	Set up job	2026-10-21T15:44:40.2331293Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Linting Django Application	Set up job	2026-10-21T15:44:40.4942624Z Complete job name: Linting Django Application
+Linting Django Application	Run actions/checkout@v3	2026-10-21T15:44:40.5578528Z with:
+Linting Django Application	Run actions/checkout@v3	2026-10-21T15:44:40.5578990Z   repository: Meet6338-X/xrwvm-fullstack_developer_capstone
+Linting Django Application	Run actions/checkout@v3	2026-10-21T15:44:40.5583689Z   token: ***
+Linting Django Application	Run actions/checkout@v3	2026-10-21T15:44:40.5584220Z   ssh-strict: true
+    ... [389 lines of dependency installation output omitted] ...
+Linting Django Application	Run actions/checkout@v3	2026-10-21T15:44:41.3960190Z Reset branch 'master'
+Linting Django Application	Run actions/checkout@v3	2026-10-21T15:44:41.3964001Z branch 'master' set up to track 'origin/master'.
+Linting Django Application	Run actions/checkout@v3	2026-10-21T15:44:41.4001086Z [command]/usr/bin/git log -1 --format='%H'
+Linting Django Application	Run actions/checkout@v3	2026-10-21T15:44:41.4019327Z '6687d5f4d3c1700ffe9f555fb5dde9b1396dcffb'
+Linting Django Application	Set up Python 3.11	2026-10-21T15:44:41.4257432Z with:
+Linting Django Application	Set up Python 3.11	2026-10-21T15:44:41.4257923Z   python-version: 3.11
+Linting Django Application	Set up Python 3.11	2026-10-21T15:44:41.4258368Z   check-latest: false
+Linting Django Application	Set up Python 3.11	2026-10-21T15:44:41.4262748Z   token: ***
+Linting Django Application	Set up Python 3.11	2026-10-21T15:44:41.4263124Z   update-environment: true
+Linting Django Application	Set up Python 3.11	2026-10-21T15:44:41.4263575Z   allow-prereleases: false
+Linting Django Application	Set up Python 3.11	2026-10-21T15:44:41.5350735Z (node:2056) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Django Application	Set up Python 3.11	2026-10-21T15:44:41.5352324Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Django Application	Set up Python 3.11	2026-10-21T15:44:41.5353130Z Successfully set up CPython (3.11.17)
+Linting Django Application	Install dependencies	2026-10-21T15:44:41.5521639Z ^[[36;1mpython -m pip install --upgrade pip^[[0m
+Linting Django Application	Install dependencies	2026-10-21T15:44:41.5522251Z ^[[36;1mpip install pylint^[[0m
+Linting Django Application	Install dependencies	2026-10-21T15:44:41.5522769Z ^[[36;1mpip install -r server/requirements.txt^[[0m
+Linting Django Application	Install dependencies	2026-10-21T15:44:41.5758453Z shell: /usr/bin/bash -e {0}
+    ... [113 lines of dependency installation output omitted] ...
+Linting Django Application	Install dependencies	2026-10-21T15:44:46.5356132Z Successfully built ibm-watson
+Linting Django Application	Install dependencies	2026-10-21T15:44:46.5875086Z Installing collected packages: websocket-client, urllib3, sqlparse, six, PyJWT, Pillow, packaging, idna, charset_normalizer, certifi, asgiref, requests, python_dateutil, gunicorn, Django, ibm-cloud-sdk-core, ibmcloudant, ibm-watson
+Linting Django Application	Install dependencies	2026-10-21T15:44:48.7474663Z 
+Linting Django Application	Install dependencies	2026-10-21T15:44:48.7488955Z Successfully installed Django-4.2.16 Pillow-13.0.0 PyJWT-2.15.1 asgiref-3.12.1 certifi-2026.10.19 charset_normalizer-3.5.2 gunicorn-21.2.0 ibm-cloud-sdk-core-3.28.0 ibm-watson-6.1.0 ibmcloudant-0.11.12 idna-3.20 packaging-26.3 python_dateutil-2.9.0.post0 requests-2.34.2 six-1.17.0 sqlparse-0.6.0 urllib3-2.8.0 websocket-client-1.1.0
+Linting Django Application	Lint with Pylint	2026-10-21T15:44:48.8226121Z ^[[36;1mpylint djangoapp djangobackend^[[0m
+Linting Django Application	Lint with Pylint	2026-10-21T15:44:48.8284677Z shell: /usr/bin/bash -e {0}
+Linting Django Application	Lint with Pylint	2026-10-21T15:44:48.8284898Z env:
+Linting Django Application	Lint with Pylint	2026-10-21T15:44:48.8285124Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Django Application	Lint with Pylint	2026-10-21T15:44:48.8285476Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+Linting Django Application	Lint with Pylint	2026-10-21T15:44:48.8285815Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Django Application	Lint with Pylint	2026-10-21T15:44:48.8286139Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Django Application	Lint with Pylint	2026-10-21T15:44:48.8286438Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Django Application	Lint with Pylint	2026-10-21T15:44:48.8286738Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+Linting Django Application	Lint with Pylint	2026-10-21T15:44:52.2798770Z 
+Linting Django Application	Lint with Pylint	2026-10-21T15:44:52.2799595Z ------------------------------------
+Linting Django Application	Lint with Pylint	2026-10-21T15:44:52.2800016Z Your code has been rated at 10.00/10
+Linting Django Application	Lint with Pylint	2026-10-21T15:44:52.2800236Z 
+Linting Django Application	Post Set up Python 3.11	 2026-10-21T15:44:53.4914442Z Post job cleanup.
+Linting Django Application	Post Set up Python 3.11	2026-10-21T15:44:53.5825824Z (node:2172) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Django Application	Post Set up Python 3.11	2026-10-21T15:44:53.5826466Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Django Application	Post Run actions/checkout@v3	 2026-10-21T15:44:53.5974670Z Post job cleanup.
+Linting Django Application	Post Run actions/checkout@v3	2026-10-21T15:44:53.6542361Z (node:2180) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Django Application	Post Run actions/checkout@v3	2026-10-21T15:44:53.6543279Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Django Application	Post Run actions/checkout@v3	2026-10-21T15:44:53.6564066Z [command]/usr/bin/git version
+Linting Django Application	Post Run actions/checkout@v3	2026-10-21T15:44:53.6595505Z git version 2.55.0
+Linting Django Application	Post Run actions/checkout@v3	2026-10-21T15:44:53.6622907Z Temporarily overriding HOME='/home/runner/work/_temp/e38be3f5-8b03-4f38-a732-8f6acc65843c' before making global git config changes
+Linting Django Application	Post Run actions/checkout@v3	2026-10-21T15:44:53.6623881Z Adding repository directory to the temporary git global config as a safe directory
+Linting Django Application	Post Run actions/checkout@v3	2026-10-21T15:44:53.6627052Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
+Linting Django Application	Post Run actions/checkout@v3	2026-10-21T15:44:53.6654180Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Linting Django Application	Post Run actions/checkout@v3	2026-10-21T15:44:53.6677345Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Linting Django Application	Post Run actions/checkout@v3	2026-10-21T15:44:53.6864869Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Linting Django Application	Post Run actions/checkout@v3	2026-10-21T15:44:53.6885316Z http.https://github.com/.extraheader
+Linting Django Application	Post Run actions/checkout@v3	2026-10-21T15:44:53.6893482Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Linting Django Application	Post Run actions/checkout@v3	2026-10-21T15:44:53.6921876Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Linting Django Application	Complete job	 2026-10-21T15:44:53.7219524Z Cleaning up orphan processes
+Linting Django Application	Complete job	2026-10-21T15:44:53.7481964Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
+==============================================================================
+JOB: Build the application container image   (ID 119319880965)
+Command: gh run view 39628438944 --repo Meet6338-X/xrwvm-fullstack_developer_capstone --job 119319880965 --log
+==============================================================================
+Build the application container image	Set up job	 2026-10-21T15:44:40.1759645Z Current runner version: '2.338.0'
+Build the application container image	Set up job	2026-10-21T15:44:40.1784300Z 24.04.5
+Build the application container image	Set up job	2026-10-21T15:44:40.2068610Z Prepare all required actions
+Build the application container image	Set up job	2026-10-21T15:44:40.2104230Z Getting action download info
+Build the application container image	Set up job	2026-10-21T15:44:40.4408441Z Download action repository 'actions/checkout@v3' (SHA:a37ce9120846195fa4ece8f58b268e6043cb2f26)
+Build the application container image	Set up job	2026-10-21T15:44:40.5339681Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Build the application container image	Set up job	2026-10-21T15:44:40.8045643Z Complete job name: Build the application container image
+Build the application container image	Run actions/checkout@v3	2026-10-21T15:44:40.8541671Z with:
+Build the application container image	Run actions/checkout@v3	2026-10-21T15:44:40.8542198Z   repository: Meet6338-X/xrwvm-fullstack_developer_capstone
+Build the application container image	Run actions/checkout@v3	2026-10-21T15:44:40.8545486Z   token: ***
+Build the application container image	Run actions/checkout@v3	2026-10-21T15:44:40.8545897Z   ssh-strict: true
+    ... [389 lines of dependency installation output omitted] ...
+Build the application container image	Run actions/checkout@v3	2026-10-21T15:44:41.8067444Z Reset branch 'master'
+Build the application container image	Run actions/checkout@v3	2026-10-21T15:44:41.8071025Z branch 'master' set up to track 'origin/master'.
+Build the application container image	Run actions/checkout@v3	2026-10-21T15:44:41.8108784Z [command]/usr/bin/git log -1 --format='%H'
+Build the application container image	Run actions/checkout@v3	2026-10-21T15:44:41.8128387Z '6687d5f4d3c1700ffe9f555fb5dde9b1396dcffb'
+Build the application container image	Set up Python 3.11	2026-10-21T15:44:41.8441742Z with:
+Build the application container image	Set up Python 3.11	2026-10-21T15:44:41.8442544Z   python-version: 3.11
+Build the application container image	Set up Python 3.11	2026-10-21T15:44:41.8443386Z   check-latest: false
+Build the application container image	Set up Python 3.11	2026-10-21T15:44:41.8451628Z   token: ***
+Build the application container image	Set up Python 3.11	2026-10-21T15:44:41.8452482Z   update-environment: true
+Build the application container image	Set up Python 3.11	2026-10-21T15:44:41.8453383Z   allow-prereleases: false
+Build the application container image	Set up Python 3.11	2026-10-21T15:44:41.9612847Z (node:2078) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Build the application container image	Set up Python 3.11	2026-10-21T15:44:41.9615926Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Build the application container image	Set up Python 3.11	2026-10-21T15:44:41.9617905Z Successfully set up CPython (3.11.17)
+Build the application container image	Build the Docker image	2026-10-21T15:44:41.9791318Z ^[[36;1mdocker build -t dealership:latest server/^[[0m
+Build the application container image	Build the Docker image	2026-10-21T15:44:41.9931801Z shell: /usr/bin/bash -e {0}
+Build the application container image	Build the Docker image	2026-10-21T15:44:41.9932726Z env:
+Build the application container image	Build the Docker image	2026-10-21T15:44:41.9933575Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+    ... [210 lines of dependency installation output omitted] ...
+Build the application container image	Build the Docker image	2026-10-21T15:44:55.7705799Z #13 exporting layers 0.9s done
+Build the application container image	Build the Docker image	2026-10-21T15:44:55.7926418Z #13 writing image sha256:f0d0b70b2e481dd8ad4f714ff803a4c33523245a8ad803da277c5dd0e1bb866c done
+Build the application container image	Build the Docker image	2026-10-21T15:44:55.7927079Z #13 naming to docker.io/library/dealership:latest done
+Build the application container image	Build the Docker image	2026-10-21T15:44:55.7927387Z #13 DONE 0.9s
+Build the application container image	Check that the image exposes the application port	2026-10-21T15:44:55.8005515Z ^[[36;1mdocker image inspect dealership:latest --format '{{.Config.ExposedPorts}}'^[[0m
+Build the application container image	Check that the image exposes the application port	2026-10-21T15:44:55.8037693Z shell: /usr/bin/bash -e {0}
+Build the application container image	Check that the image exposes the application port	2026-10-21T15:44:55.8038044Z env:
+Build the application container image	Check that the image exposes the application port	2026-10-21T15:44:55.8038323Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+Build the application container image	Check that the image exposes the application port	2026-10-21T15:44:55.8038686Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+Build the application container image	Check that the image exposes the application port	2026-10-21T15:44:55.8039140Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Build the application container image	Check that the image exposes the application port	2026-10-21T15:44:55.8039478Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Build the application container image	Check that the image exposes the application port	2026-10-21T15:44:55.8039830Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Build the application container image	Check that the image exposes the application port	2026-10-21T15:44:55.8040179Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+Build the application container image	Check that the image exposes the application port	2026-10-21T15:44:55.8215327Z map[8000/tcp:{}]
+Build the application container image	Post Set up Python 3.11	 2026-10-21T15:44:55.8306637Z Post job cleanup.
+Build the application container image	Post Set up Python 3.11	2026-10-21T15:44:55.9172010Z (node:2469) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Build the application container image	Post Set up Python 3.11	2026-10-21T15:44:55.9172608Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Build the application container image	Post Run actions/checkout@v3	 2026-10-21T15:44:55.9342020Z Post job cleanup.
+Build the application container image	Post Run actions/checkout@v3	2026-10-21T15:44:55.9879588Z (node:2477) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Build the application container image	Post Run actions/checkout@v3	2026-10-21T15:44:55.9880186Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Build the application container image	Post Run actions/checkout@v3	2026-10-21T15:44:55.9901876Z [command]/usr/bin/git version
+Build the application container image	Post Run actions/checkout@v3	2026-10-21T15:44:55.9931731Z git version 2.55.0
+Build the application container image	Post Run actions/checkout@v3	2026-10-21T15:44:55.9958978Z Temporarily overriding HOME='/home/runner/work/_temp/d3359856-608d-464d-87cc-c41598797fd3' before making global git config changes
+Build the application container image	Post Run actions/checkout@v3	2026-10-21T15:44:55.9960197Z Adding repository directory to the temporary git global config as a safe directory
+Build the application container image	Post Run actions/checkout@v3	2026-10-21T15:44:55.9962620Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
+Build the application container image	Post Run actions/checkout@v3	2026-10-21T15:44:55.9988221Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Build the application container image	Post Run actions/checkout@v3	2026-10-21T15:44:56.0010431Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Build the application container image	Post Run actions/checkout@v3	2026-10-21T15:44:56.0174957Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Build the application container image	Post Run actions/checkout@v3	2026-10-21T15:44:56.0195549Z http.https://github.com/.extraheader
+Build the application container image	Post Run actions/checkout@v3	2026-10-21T15:44:56.0201283Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Build the application container image	Post Run actions/checkout@v3	2026-10-21T15:44:56.0226530Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Build the application container image	Complete job	 2026-10-21T15:44:56.0501695Z Cleaning up orphan processes
+Build the application container image	Complete job	2026-10-21T15:44:56.0785798Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

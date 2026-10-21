@@ -49,7 +49,14 @@ def _load_catalogue():
         path = os.path.abspath(candidate)
         if os.path.isfile(path):
             with open(path, encoding='utf-8') as fh:
-                return json.load(fh)
+                catalogue = json.load(fh)
+            if isinstance(catalogue, dict):
+                for key in ('carmakes', 'car_makes', 'carMakes', 'data'):
+                    if isinstance(catalogue.get(key), list):
+                        return catalogue[key]
+                return []
+            if isinstance(catalogue, list):
+                return catalogue
     return []
 
 
