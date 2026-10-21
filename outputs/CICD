@@ -1,0 +1,217 @@
+﻿theia@theia-devshahm:/home/project$ gh workflow run linter.yml --repo Meet6338-X/agfzb-CloudAppDevelopment_Capstone --ref master
+
+theia@theia-devshahm:/home/project$ gh run list --repo Meet6338-X/agfzb-CloudAppDevelopment_Capstone --limit 1
+completed	success	Lint Code	Lint Code	master	workflow_dispatch	39562718311	28s	2026-10-21T07:32:37Z
+
+theia@theia-devshahm:/home/project$ gh run view 39562718311 --repo Meet6338-X/agfzb-CloudAppDevelopment_Capstone
+
+Γ£ô master Lint Code ┬╖ 39562718311
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+Γ£ô Linting Django Server in 11s (ID 119097535563)
+Γ£ô Linting JavaScript Function in 12s (ID 119097535664)
+Γ£ô Linting Dealership Cloud Function in 13s (ID 119097535708)
+Γ£ô Linting Python Function in 9s (ID 119097535723)
+Γ£ô Build the application container image in 19s (ID 119097535812)
+Γ£ô Linting Django Application in 23s (ID 119097535857)
+Γ£ô Linting Reviews Cloud Function in 12s (ID 119097536034)
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Linting Django Server: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Linting Django Server: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-node@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Linting JavaScript Function: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Linting JavaScript Function: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-node@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Linting Dealership Cloud Function: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Linting Dealership Cloud Function: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Linting Python Function: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Linting Python Function: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Build the application container image: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Build the application container image: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Linting Django Application: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Linting Django Application: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Linting Reviews Cloud Function: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Linting Reviews Cloud Function: .github#1
+
+
+For more information about a job, try: gh run view --job=<job-id>
+View this run on GitHub: https://github.com/Meet6338-X/agfzb-CloudAppDevelopment_Capstone/actions/runs/39562718311
+
+theia@theia-devshahm:/home/project$ gh run view 39562718311 --repo Meet6338-X/agfzb-CloudAppDevelopment_Capstone --log | tail -n 150
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8380342Z Receiving objects:  99% (274/276)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8381344Z Receiving objects: 100% (276/276)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8382679Z Receiving objects: 100% (276/276), 1.09 MiB | 24.72 MiB/s, done.
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8384602Z Resolving deltas:   0% (0/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8385741Z Resolving deltas:   3% (1/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8386918Z Resolving deltas:   6% (2/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8388201Z Resolving deltas:   9% (3/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8396421Z Resolving deltas:  12% (4/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8398269Z Resolving deltas:  16% (5/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8399613Z Resolving deltas:  19% (6/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8400479Z Resolving deltas:  22% (7/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8401074Z Resolving deltas:  25% (8/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8401669Z Resolving deltas:  29% (9/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8402391Z Resolving deltas:  32% (10/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8402992Z Resolving deltas:  35% (11/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8403567Z Resolving deltas:  38% (12/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8404135Z Resolving deltas:  41% (13/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8404699Z Resolving deltas:  45% (14/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8405289Z Resolving deltas:  48% (15/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8406139Z Resolving deltas:  51% (16/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8406733Z Resolving deltas:  54% (17/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8407667Z Resolving deltas:  58% (18/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8408267Z Resolving deltas:  61% (19/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8408859Z Resolving deltas:  64% (20/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8409433Z Resolving deltas:  67% (21/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8410012Z Resolving deltas:  70% (22/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8410594Z Resolving deltas:  74% (23/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8411168Z Resolving deltas:  77% (24/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8411751Z Resolving deltas:  80% (25/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8412333Z Resolving deltas:  83% (26/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8412908Z Resolving deltas:  87% (27/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8413484Z Resolving deltas:  90% (28/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8414059Z Resolving deltas:  93% (29/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8414644Z Resolving deltas:  96% (30/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8415216Z Resolving deltas: 100% (31/31)
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8415817Z Resolving deltas: 100% (31/31), done.
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8525217Z From https://github.com/Meet6338-X/agfzb-CloudAppDevelopment_Capstone
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8526447Z  * [new ref]         87212595c6a61fea063523dad225a82b177cd7ef -> origin/master
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8532118Z ##[endgroup]
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8533010Z ##[group]Determining the checkout info
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8534534Z ##[endgroup]
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8535382Z ##[group]Checking out the ref
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8539398Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8782009Z Reset branch 'master'
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8788119Z branch 'master' set up to track 'origin/master'.
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8833850Z ##[endgroup]
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8836915Z [command]/usr/bin/git log -1 --format='%H'
+Linting Reviews Cloud Function	Run actions/checkout@v3	2026-10-21T07:32:43.8862279Z '87212595c6a61fea063523dad225a82b177cd7ef'
+Linting Reviews Cloud Function	Set up Python 3.11	∩╗┐2026-10-21T07:32:43.9166111Z ##[group]Run actions/setup-python@v4
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:43.9166815Z with:
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:43.9167637Z   python-version: 3.11
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:43.9168431Z   check-latest: false
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:43.9172560Z   token: ***
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:43.9173049Z   update-environment: true
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:43.9173600Z   allow-prereleases: false
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:43.9174126Z ##[endgroup]
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:44.0562642Z ##[group]Installed versions
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:44.1142789Z (node:2249) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:44.1145766Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:44.1147860Z Successfully set up CPython (3.11.17)
+Linting Reviews Cloud Function	Set up Python 3.11	2026-10-21T07:32:44.1149637Z ##[endgroup]
+Linting Reviews Cloud Function	Install dependencies	∩╗┐2026-10-21T07:32:44.1375728Z ##[group]Run python -m pip install --upgrade pip
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1377803Z ^[[36;1mpython -m pip install --upgrade pip^[[0m
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1379236Z ^[[36;1mpip install pylint^[[0m
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1380996Z ^[[36;1mif [ -f requirements.txt ]; then pip install -r requirements.txt; fi^[[0m
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1853096Z shell: /usr/bin/bash -e {0}
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1853983Z env:
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1854806Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1856399Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1858078Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1859371Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1860659Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1862015Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:44.1863111Z ##[endgroup]
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:46.8412002Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages (26.2.1)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:46.9605431Z Collecting pip
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.0107272Z   Downloading pip-26.2.2-py3-none-any.whl.metadata (4.6 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.0189017Z Downloading pip-26.2.2-py3-none-any.whl (1.8 MB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.0887746Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 1.8/1.8 MB 47.4 MB/s  0:00:00
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.2551956Z Installing collected packages: pip
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.2552931Z   Attempting uninstall: pip
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.2567482Z     Found existing installation: pip 26.2.1
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.3279807Z     Uninstalling pip-26.2.1:
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:47.3344077Z       Successfully uninstalled pip-26.2.1
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:48.2265398Z Successfully installed pip-26.2.2
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.1795731Z Collecting pylint
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.2281646Z   Downloading pylint-4.1.3-py3-none-any.whl.metadata (12 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.2579454Z Collecting astroid<=4.4,>=4.3.4 (from pylint)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.2616649Z   Downloading astroid-4.3.4-py3-none-any.whl.metadata (4.4 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.2850235Z Collecting dill>=0.3.6 (from pylint)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.2887360Z   Downloading dill-0.4.1-py3-none-any.whl.metadata (10 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3231026Z Collecting isort!=5.13,<10,>=5 (from pylint)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3277598Z   Downloading isort-9.0.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3400827Z Collecting mccabe<0.8,>=0.6 (from pylint)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3435159Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3647996Z Collecting platformdirs>=2.2 (from pylint)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3684113Z   Downloading platformdirs-4.13.5-py3-none-any.whl.metadata (5.5 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3853843Z Collecting tomlkit>=0.10.1 (from pylint)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.3888840Z   Downloading tomlkit-0.15.2-py3-none-any.whl.metadata (3.4 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4009313Z Collecting mypy-extensions>=1.1.0 (from isort!=5.13,<10,>=5->pylint)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4046991Z   Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4133401Z Downloading pylint-4.1.3-py3-none-any.whl (588 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4293126Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 589.0/589.0 kB 59.3 MB/s  0:00:00
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4334945Z Downloading astroid-4.3.4-py3-none-any.whl (288 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4407301Z Downloading isort-9.0.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.6 MB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4577347Z    ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü 1.6/1.6 MB 100.9 MB/s  0:00:00
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4611619Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4661322Z Downloading dill-0.4.1-py3-none-any.whl (120 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4713957Z Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4766621Z Downloading platformdirs-4.13.5-py3-none-any.whl (32 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.4817602Z Downloading tomlkit-0.15.2-py3-none-any.whl (52 kB)
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:49.5291120Z Installing collected packages: tomlkit, platformdirs, mypy-extensions, mccabe, dill, astroid, isort, pylint
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:50.3077280Z 
+Linting Reviews Cloud Function	Install dependencies	2026-10-21T07:32:50.3088698Z Successfully installed astroid-4.3.4 dill-0.4.1 isort-9.0.2 mccabe-0.7.0 mypy-extensions-1.1.0 platformdirs-4.13.5 pylint-4.1.3 tomlkit-0.15.2
+Linting Reviews Cloud Function	Lint with Pylint	∩╗┐2026-10-21T07:32:50.3703725Z ##[group]Run pylint *.py
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3704038Z ^[[36;1mpylint *.py^[[0m
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3771504Z shell: /usr/bin/bash -e {0}
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3771775Z env:
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3772053Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3772529Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3772989Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3773398Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3773806Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3774219Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.3774565Z ##[endgroup]
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.6353464Z pylint: Command line or configuration file:1: UserWarning: 'BaseException' is not a proper value for the 'overgeneral-exceptions' option. Use fully qualified name (maybe 'builtins.BaseException' ?) instead. This will cease to be checked at runtime when the configuration upgrader is released.
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:50.6357588Z pylint: Command line or configuration file:1: UserWarning: 'Exception' is not a proper value for the 'overgeneral-exceptions' option. Use fully qualified name (maybe 'builtins.Exception' ?) instead. This will cease to be checked at runtime when the configuration upgrader is released.
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:51.3642196Z 
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:51.3642757Z ------------------------------------
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:51.3643434Z Your code has been rated at 10.00/10
+Linting Reviews Cloud Function	Lint with Pylint	2026-10-21T07:32:51.3643814Z 
+Linting Reviews Cloud Function	Post Set up Python 3.11	∩╗┐2026-10-21T07:32:51.6137774Z Post job cleanup.
+Linting Reviews Cloud Function	Post Set up Python 3.11	2026-10-21T07:32:51.7365436Z (node:2339) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Reviews Cloud Function	Post Set up Python 3.11	2026-10-21T07:32:51.7366702Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	∩╗┐2026-10-21T07:32:51.7584318Z Post job cleanup.
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8294971Z (node:2347) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8295741Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8331957Z [command]/usr/bin/git version
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8368452Z git version 2.55.0
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8408914Z Temporarily overriding HOME='/home/runner/work/_temp/51ca16c0-abd5-4603-ad6e-4df69df87173' before making global git config changes
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8410371Z Adding repository directory to the temporary git global config as a safe directory
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8415061Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/agfzb-CloudAppDevelopment_Capstone/agfzb-CloudAppDevelopment_Capstone
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8450511Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8483229Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8713902Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8739665Z http.https://github.com/.extraheader
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8750899Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Linting Reviews Cloud Function	Post Run actions/checkout@v3	2026-10-21T07:32:51.8785530Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Linting Reviews Cloud Function	Complete job	∩╗┐2026-10-21T07:32:51.9154127Z Cleaning up orphan processes
+Linting Reviews Cloud Function	Complete job	2026-10-21T07:32:51.9569410Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3, actions/setup-python@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

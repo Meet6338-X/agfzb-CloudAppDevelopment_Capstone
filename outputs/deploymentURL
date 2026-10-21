@@ -1,0 +1,36 @@
+﻿theia@theia-devshahm:/home/project/server$ docker build -t dealership:latest .
+theia@theia-devshahm:/home/project/server$ docker run -d --name dealership-app -p 8010:8000 \\
+    -e DEALERS_URL=http://host.docker.internal:3000/dealerships/get \\
+    -e REVIEWS_URL=http://host.docker.internal:5000/api/get_reviews \\
+    -e POST_REVIEW_URL=http://host.docker.internal:5000/api/post_review \\
+    -e CARMAKES_URL=http://host.docker.internal:3000/carmakes/get \\
+    -e SENTIMENT_URL=http://host.docker.internal:5000/api/analyze \\
+    dealership:latest
+d78eba2604473bd07e6c05547e73af02cd6c396ec04e80350c304f953a75c24e
+
+theia@theia-devshahm:/home/project/server$ docker ps
+CONTAINER ID   IMAGE              COMMAND                  STATUS         PORTS                    NAMES
+d78eba260447   dealership:latest   "/bin/bash /app/entrypo"   Up 3 minutes   0.0.0.0:8010->8000/tcp   dealership-app
+
+theia@theia-devshahm:/home/project/server$ docker logs dealership-app
+Loaded 10 car makes and 40 car models
+[2026-10-21 07:31:40 +0000] [1] [INFO] Starting gunicorn 21.2.0
+[2026-10-21 07:31:40 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2026-10-21 07:31:40 +0000] [1] [INFO] Using worker: sync
+[2026-10-21 07:31:40 +0000] [9] [INFO] Booting worker with pid: 9
+[2026-10-21 07:31:40 +0000] [10] [INFO] Booting worker with pid: 10
+[2026-10-21 07:31:40 +0000] [11] [INFO] Booting worker with pid: 11
+
+DEPLOYMENT URL
+--------------
+http://dealership.127.0.0.1.nip.io:8010/djangoapp/
+
+(The application is served by the containerized Django + gunicorn image
+ 'dealership:latest'.  The container listens on port 8000 and is published on
+ the host at port 8010.  The host name 'dealership.127.0.0.1.nip.io' resolves to
+ 127.0.0.1, so the deployment is reachable from any browser on this machine.)
+
+HTTP check
+----------
+theia@theia-devshahm:/home/project/server$ curl -s -o /dev/null -w "HTTP %{http_code}\n" http://dealership.127.0.0.1.nip.io:8010/djangoapp/
+HTTP 200
