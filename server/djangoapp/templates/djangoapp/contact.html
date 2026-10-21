@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>Contact Us - Dealership Review</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+    <body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'djangoapp:index' %}">Dealership Review</a>
+        <ul class="nav nav-pills mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'djangoapp:about' %}">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'djangoapp:contact' %}">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'djangoapp:index' %}">Home</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-center mt-4">Contact Us</h1>
+        <p class="text-center lead">We would love to hear from you - our team replies within one
+            business day.</p>
+
+        <div class="row my-4">
+            <div class="col-md-6">
+                <h3>Head office</h3>
+                <address>
+                    <strong>Best Cars Dealership</strong><br>
+                    1200 Automile Avenue, Suite 400<br>
+                    El Paso, TX 88563<br>
+                    United States
+                </address>
+                <h3>Phone</h3>
+                <p><a href="tel:+19155550142">+1 (915) 555-0142</a></p>
+                <h3>Email</h3>
+                <ul class="list-unstyled">
+                    <li><a href="mailto:support@bestcars.com">support@bestcars.com</a> - General enquiries</li>
+                    <li><a href="mailto:sales@bestcars.com">sales@bestcars.com</a> - Sales and vehicle pricing</li>
+                    <li><a href="mailto:reviews@bestcars.com">reviews@bestcars.com</a> - Review moderation</li>
+                    <li><a href="mailto:careers@bestcars.com">careers@bestcars.com</a> - Job opportunities</li>
+                </ul>
+                <h3>Opening hours</h3>
+                <table class="table table-sm w-auto">
+                    <tbody>
+                        <tr><th scope="row">Monday - Friday</th><td>09:00 - 18:00</td></tr>
+                        <tr><th scope="row">Saturday</th><td>10:00 - 16:00</td></tr>
+                        <tr><th scope="row">Sunday</th><td>Closed</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <img src="/static/images/contact.jpg" class="img-fluid rounded mb-3" alt="Contact the dealership"
+                     width="100%">
+                <img src="/static/images/showroom.jpg" class="img-fluid rounded" alt="Our showroom" width="100%">
+            </div>
+        </div>
+    </div>
+    </body>
+
+</html>

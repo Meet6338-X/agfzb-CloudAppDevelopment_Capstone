@@ -1,0 +1,237 @@
+/* Best Cars Dealership - shared styles for the React frontend and the
+   standalone static About Us / Contact Us pages. */
+
+:root {
+  --brand: #1b3a5c;
+  --brand-light: #f4f6f8;
+  --accent: #c8102e;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #24303b;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navbar {
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-link,
+.navbar-nav .btn-link {
+  color: #24303b;
+  text-decoration: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+}
+
+.nav-link.active,
+.nav-link:hover,
+.navbar-nav .btn-link:hover {
+  color: var(--brand);
+  background: #e9ecef;
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--brand);
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: #4a5763;
+}
+
+.section-title {
+  margin-top: 2.5rem;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+.about-hero {
+  margin-top: 1.5rem;
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.about-wide-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.team-card {
+  background: var(--brand-light);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #e1e6eb;
+}
+
+.team-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.team-card h3 {
+  margin: 0.75rem 0 0.15rem;
+  font-size: 1.1rem;
+}
+
+.team-role {
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.team-details {
+  font-size: 0.88rem;
+  color: #4a5763;
+  text-align: left;
+}
+
+.team-email {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+  word-break: break-all;
+}
+
+.feature-box {
+  background: var(--brand-light);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-row {
+  margin-top: 1.5rem;
+}
+
+.contact-details address {
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-list li {
+  padding: 0.15rem 0;
+}
+
+.contact-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.hours-table {
+  max-width: 420px;
+}
+
+.dealer-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.dealer-table th,
+.dealer-table td {
+  border: 1px solid #dee2e6;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.dealer-table thead th {
+  background: var(--brand);
+  color: #ffffff;
+}
+
+.review-card {
+  border: 1px solid #e1e6eb;
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: #ffffff;
+}
+
+.review-meta {
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin: 0 0 0.4rem;
+}
+
+.review-sentiment {
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.state-filter {
+  margin: 1rem 0;
+}
+
+.footer {
+  background: var(--brand);
+  color: #e9ecef;
+  text-align: center;
+  padding: 1.25rem;
+  margin-top: 3rem;
+}
+
+.footer a {
+  color: #ffffff;
+}

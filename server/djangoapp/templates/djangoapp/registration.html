@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8">
     {% load static %}
+    <title>Dealership Review - Sign Up</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
     <body>
-    <!--Add a registration form here -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'djangoapp:index' %}">Dealership Review</a>
+        <ul class="nav nav-pills mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'djangoapp:about' %}">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'djangoapp:contact' %}">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'djangoapp:login' %}">Login</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-center mt-4">Sign Up</h1>
+        <form class="col-6 mx-auto" action="{% url 'djangoapp:registration' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="psw">Password</label>
+                <input type="password" class="form-control" id="psw" name="psw" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
     </body>
+
 </html>

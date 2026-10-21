@@ -140,3 +140,13 @@ server/djangoapp/migrations/
 *.pyc
 server/djangoapp/migrations/
 
+
+# Capstone project
+node_modules/
+server/db.sqlite3
+server/frontend/dist/
+functions/node_modules/
+cloudant/data/reviews-store.json
+*.log
+outputs/_*
+

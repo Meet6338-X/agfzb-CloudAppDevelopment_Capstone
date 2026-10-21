@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>About Us - Dealership Review</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+    <body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'djangoapp:index' %}">Dealership Review</a>
+        <ul class="nav nav-pills mr-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'djangoapp:about' %}">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'djangoapp:contact' %}">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'djangoapp:index' %}">Home</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-center mt-4">About Us</h1>
+        <p class="text-center lead">Best Cars Dealership - a national car retailer in the U.S. with
+            50 branches across 21 states.</p>
+
+        <div class="row my-4">
+            <div class="col-md-6">
+                <img src="/static/images/dealership.jpg" class="img-fluid rounded" alt="Best Cars Dealership showroom"
+                     width="100%">
+            </div>
+            <div class="col-md-6">
+                <h3>Our Story</h3>
+                <p>Best Cars Dealership started in 1998 with a single family owned branch in
+                    El Paso, Texas. Today we operate 50 branches across the United States and every
+                    one of them is run by people who are proud to live in the community they serve.</p>
+                <p>Our mission is simple: to make buying a car an easy, transparent and enjoyable
+                    experience, and to support the communities our dealerships are part of.</p>
+            </div>
+        </div>
+
+        <h2 class="text-center my-4">Meet the team</h2>
+        <div class="row my-4">
+            <div class="col-md-3 text-center">
+                <img src="/static/images/team1.jpg" class="img-fluid rounded-circle mb-2" alt="Ayesha Khan"
+                     width="140" height="140">
+                <h5>Ayesha Khan</h5>
+                <p class="text-muted">Chief Executive Officer</p>
+                <p>Ayesha leads the group strategy and the national dealer network.</p>
+                <p><a href="mailto:ayesha.khan@bestcars.com">ayesha.khan@bestcars.com</a></p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/static/images/team2.jpg" class="img-fluid rounded-circle mb-2" alt="Marcus Reed"
+                     width="140" height="140">
+                <h5>Marcus Reed</h5>
+                <p class="text-muted">Head of Customer Experience</p>
+                <p>Marcus designs the customer journey of every dealership.</p>
+                <p><a href="mailto:marcus.reed@bestcars.com">marcus.reed@bestcars.com</a></p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/static/images/team3.jpg" class="img-fluid rounded-circle mb-2" alt="Priya Raman"
+                     width="140" height="140">
+                <h5>Priya Raman</h5>
+                <p class="text-muted">Director of Technology</p>
+                <p>Priya runs the engineering team behind the dealership review platform.</p>
+                <p><a href="mailto:priya.raman@bestcars.com">priya.raman@bestcars.com</a></p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/static/images/team4.jpg" class="img-fluid rounded-circle mb-2" alt="Daniel Ortiz"
+                     width="140" height="140">
+                <h5>Daniel Ortiz</h5>
+                <p class="text-muted">Regional Sales Manager</p>
+                <p>Daniel manages the 14 branches of the central region.</p>
+                <p><a href="mailto:daniel.ortiz@bestcars.com">daniel.ortiz@bestcars.com</a></p>
+            </div>
+        </div>
+
+        <h2 class="text-center my-4">What we offer</h2>
+        <div class="row my-4 text-center">
+            <div class="col-md-4">
+                <h5>Wide vehicle choice</h5>
+                <p>New and used cars from every major manufacturer, always in stock.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Transparent pricing</h5>
+                <p>No hidden fees - the price you see is the price you pay.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Real customer reviews</h5>
+                <p>Read what other buyers really think before you visit a branch.</p>
+            </div>
+        </div>
+    </div>
+    </body>
+
+</html>

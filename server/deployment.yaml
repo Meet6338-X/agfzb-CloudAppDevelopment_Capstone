@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: dealership
+  name: dealership
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: dealership
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: dealership
+    spec:
+      containers:
+        - image: us.icr.io/$MY_NAMESPACE/dealership:latest
+          imagePullPolicy: Always
+          name: dealership
+          env:
+            - name: DEALERS_URL
+              value: http://localhost:3000/dealerships/get
+            - name: REVIEWS_URL
+              value: http://localhost:5000/api/get_reviews
+            - name: POST_REVIEW_URL
+              value: http://localhost:5000/api/post_review
+            - name: CARMAKES_URL
+              value: http://localhost:3000/carmakes/get
+            - name: SENTIMENT_URL
+              value: http://localhost:5000/api/analyze
+          ports:
+            - containerPort: 8000
+              protocol: TCP
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: dealership
+  name: dealership
+spec:
+  selector:
+    run: dealership
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+  type: NodePort
