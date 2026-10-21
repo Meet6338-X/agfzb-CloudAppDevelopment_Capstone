@@ -1,6 +1,4 @@
 """Load the car makes and the car models of the document store into the database."""
-import os
-
 from django.core.management.base import BaseCommand
 
 from djangoapp.models import CarMake, CarModel

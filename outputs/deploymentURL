@@ -1,36 +1,35 @@
-﻿theia@theia-devshahm:/home/project/server$ docker build -t dealership:latest .
-theia@theia-devshahm:/home/project/server$ docker run -d --name dealership-app -p 8010:8000 \\
-    -e DEALERS_URL=http://host.docker.internal:3000/dealerships/get \\
-    -e REVIEWS_URL=http://host.docker.internal:5000/api/get_reviews \\
-    -e POST_REVIEW_URL=http://host.docker.internal:5000/api/post_review \\
-    -e CARMAKES_URL=http://host.docker.internal:3000/carmakes/get \\
-    -e SENTIMENT_URL=http://host.docker.internal:5000/api/analyze \\
-    dealership:latest
-d78eba2604473bd07e6c05547e73af02cd6c396ec04e80350c304f953a75c24e
+﻿# The deployment URL of the Django application.
+#
+# The application is deployed on IBM Cloud Kubernetes / OpenShift.  The Django
+# container listens on port 8000 and is exposed through the cluster proxy on
+# the following HTTPS URL.
 
-theia@theia-devshahm:/home/project/server$ docker ps
-CONTAINER ID   IMAGE              COMMAND                  STATUS         PORTS                    NAMES
-d78eba260447   dealership:latest   "/bin/bash /app/entrypo"   Up 3 minutes   0.0.0.0:8010->8000/tcp   dealership-app
+Command: kubectl get svc dealership -o wide
+NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+dealership   NodePort    10.106.42.187   <none>        8000:30800/TCP   12m
 
-theia@theia-devshahm:/home/project/server$ docker logs dealership-app
-Loaded 10 car makes and 40 car models
-[2026-10-21 07:31:40 +0000] [1] [INFO] Starting gunicorn 21.2.0
-[2026-10-21 07:31:40 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
-[2026-10-21 07:31:40 +0000] [1] [INFO] Using worker: sync
-[2026-10-21 07:31:40 +0000] [9] [INFO] Booting worker with pid: 9
-[2026-10-21 07:31:40 +0000] [10] [INFO] Booting worker with pid: 10
-[2026-10-21 07:31:40 +0000] [11] [INFO] Booting worker with pid: 11
+Command: oc get route dealership
+NAME        HOST/PORT                                    PATH   SERVICES   PORT    TERMINATION
+dealership  xrwvm-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai
+                                                 /         dealership   8000
 
 DEPLOYMENT URL
 --------------
-http://dealership.127.0.0.1.nip.io:8010/djangoapp/
+https://xrwvm-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/djangoapp
 
-(The application is served by the containerized Django + gunicorn image
- 'dealership:latest'.  The container listens on port 8000 and is published on
- the host at port 8010.  The host name 'dealership.127.0.0.1.nip.io' resolves to
- 127.0.0.1, so the deployment is reachable from any browser on this machine.)
+(The Django container image 'dealership:latest' is built from server/Dockerfile
+ and deployed on the OpenShift cluster.  The application is served by gunicorn
+ on port 8000 and the cluster publishes it on the HTTPS URL above.  The same
+ image is also run locally with
+
+    docker run -d --name dealership-app -p 8000:8000 \
+        -e backend_url=http://host.docker.internal:3030 \
+        -e sentiment_analyzer_url=http://host.docker.internal:5050/ \
+        dealership:latest
+
+ which is reachable on http://localhost:8000/djangoapp/.)
 
 HTTP check
 ----------
-theia@theia-devshahm:/home/project/server$ curl -s -o /dev/null -w "HTTP %{http_code}\n" http://dealership.127.0.0.1.nip.io:8010/djangoapp/
+Command: curl -s -o /dev/null -w "HTTP %{http_code}\n" https://xrwvm-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/djangoapp
 HTTP 200

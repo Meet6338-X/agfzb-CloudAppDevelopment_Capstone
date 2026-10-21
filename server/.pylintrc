@@ -95,6 +95,8 @@ disable=raw-checker-failed,
         no-member,
         invalid-name,
         redefined-builtin,
+          broad-exception-caught,
+        unused-argument,
         too-few-public-methods,
         too-many-instance-attributes,
         too-many-arguments,
@@ -590,4 +592,4 @@ min-public-methods=2
 # Exceptions that will emit a warning when being caught. Defaults to
 # "BaseException, Exception".
 overgeneral-exceptions=builtins.BaseException,
-                       Exception
+                       builtins.Exception
