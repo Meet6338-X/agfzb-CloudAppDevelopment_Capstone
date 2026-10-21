@@ -119,6 +119,7 @@ def logout_request(request):
     logout(request)
     if _wants_json(request):
         return JsonResponse({"userName": ""})
+    messages.success(request, "You have been logged out successfully.")
     return redirect("djangoapp:index")
 
 
@@ -127,9 +128,7 @@ def logout_request(request):
 def registration_request(request):
     """Create a new user account and log the new user in."""
     context = {}
-    if _wants_json(request):
-        if request.method != "POST":
-            return JsonResponse({"userName": "", "error": "Bad Request"}, status=400)
+    if _wants_json(request) and request.method == "POST":
         data = _json_body(request)
         username = data.get('userName', '')
         password = data.get('password', '')
