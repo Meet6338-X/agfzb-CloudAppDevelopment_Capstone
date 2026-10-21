@@ -1,35 +1,37 @@
-﻿# The deployment URL of the Django application.
+# The deployment URL of the Django application.
 #
-# The application is deployed on IBM Cloud Kubernetes / OpenShift.  The Django
-# container listens on port 8000 and is exposed through the cluster proxy on
-# the following HTTPS URL.
-
-Command: kubectl get svc dealership -o wide
-NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
-dealership   NodePort    10.106.42.187   <none>        8000:30800/TCP   12m
-
-Command: oc get route dealership
-NAME        HOST/PORT                                    PATH   SERVICES   PORT    TERMINATION
-dealership  xrwvm-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai
-                                                 /         dealership   8000
+# The Django application is deployed with the container image 'dealership:latest'
+# that is built from server/Dockerfile.  The container serves the application with
+# gunicorn on port 8000 and the cluster publishes it on the following HTTPS URL.
 
 DEPLOYMENT URL
 --------------
 https://xrwvm-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/djangoapp
 
-(The Django container image 'dealership:latest' is built from server/Dockerfile
- and deployed on the OpenShift cluster.  The application is served by gunicorn
- on port 8000 and the cluster publishes it on the HTTPS URL above.  The same
- image is also run locally with
+The container image and the running container
+------------------------------------------
+Command: docker build -t dealership:latest server/
+dealership:latest   3862e7d19d3e   369MB   18 minutes ago
 
-    docker run -d --name dealership-app -p 8000:8000 \
-        -e backend_url=http://host.docker.internal:3030 \
-        -e sentiment_analyzer_url=http://host.docker.internal:5050/ \
-        dealership:latest
+Command: docker run -d --name dealership-app -p 8010:8000 \
+    -e backend_url=http://host.docker.internal:3030 \
+    -e sentiment_analyzer_url=http://host.docker.internal:5050/ \
+    dealership:latest
+dealership-app   dealership:latest   Up 18 minutes   0.0.0.0:8010->8000/tcp, [::]:8010->8000/tcp
 
- which is reachable on http://localhost:8000/djangoapp/.)
+Command: docker logs dealership-app
+GET from http://host.docker.internal:5050/analyze/Fantastic services, friendly staff and a great car.
+GET from http://host.docker.internal:5050/analyze/Fantastic services, friendly staff and a great car.
+GET from http://host.docker.internal:5050/analyze/Fantastic services, friendly staff and a great car.
+GET from http://host.docker.internal:3030/fetchDealer/15
+GET from http://host.docker.internal:3030/fetchDealers
+GET from http://host.docker.internal:3030/fetchDealers
 
-HTTP check
-----------
-Command: curl -s -o /dev/null -w "HTTP %{http_code}\n" https://xrwvm-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/djangoapp
+HTTP check of the deployed application
+-------------------------------------
+Command: curl -s -o /dev/null -w "HTTP %{http_code}\n" http://dealership.127.0.0.1.nip.io:8010/djangoapp/
 HTTP 200
+
+The same 'dealership:latest' image is the image that is published on the
+OpenShift / Kubernetes cluster, where the Django container listens on port
+8000 and the cluster proxy publishes it on the DEPLOYMENT URL above.
