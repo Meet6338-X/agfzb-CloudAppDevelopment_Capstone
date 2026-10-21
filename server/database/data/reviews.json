@@ -1,0 +1,68 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Berkly Shepley",
+      "dealership": 15,
+      "review": "Total grid-enabled service-desk",
+      "purchase": true,
+      "purchase_date": "07/11/2020",
+      "car_make": "Audi",
+      "car_model": "A6",
+      "car_year": 2010,
+      "_id": "c8f5c174d0eed5be98693ce0"
+    },
+    {
+      "id": 2,
+      "name": "Gwenora Zettoi",
+      "dealership": 23,
+      "review": "Future-proofed foreground capability",
+      "purchase": true,
+      "purchase_date": "09/17/2020",
+      "car_make": "Pontiac",
+      "car_model": "Firebird",
+      "car_year": 1995,
+      "_id": "31071b1fbe87cd113e556ada"
+    },
+    {
+      "id": 3,
+      "name": "Lion Reames",
+      "dealership": 29,
+      "review": "Expanded global groupware",
+      "purchase": true,
+      "purchase_date": "10/20/2020",
+      "car_make": "Mazda",
+      "car_model": "MX-5",
+      "car_year": 2003,
+      "_id": "3cc9728698ae45fa9fcfc589"
+    },
+    {
+      "id": 4,
+      "name": "Iorgos Colley",
+      "dealership": 13,
+      "review": "Optional heuristic software",
+      "purchase": false,
+      "_id": "9e700aa3d984dc3f140fe6a8"
+    },
+    {
+      "id": 5,
+      "name": "Kissee Noirel",
+      "dealership": 46,
+      "review": "Diverse client-server success",
+      "purchase": false,
+      "_id": "20641ea0db580454ea8608af"
+    },
+    {
+      "id": 15,
+      "name": "Tempsoft Car Dealership",
+      "dealership": 15,
+      "review": "Fantastic services, friendly staff and a great car.",
+      "purchase": "Yes",
+      "purchase_date": "2026-10-15",
+      "car_make": "Audi",
+      "car_model": "A6",
+      "car_year": 2010,
+      "_id": "c4617564b1254f0d244dfe76"
+    }
+  ]
+}

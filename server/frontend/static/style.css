@@ -1,0 +1,138 @@
+/* Best Cars Dealership - shared stylesheet for the static pages */
+
+:root {
+  --brand: #0b6ea8;
+  --brand-dark: #084c78;
+  --brand-light: #e8f3fa;
+  --text: #24303a;
+  --muted: #5d6d78;
+  --border: #d7e1e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background-color: #f7fafc;
+  line-height: 1.6;
+}
+
+/* ---------------------------------------------------------------- nav bar */
+.navbar {
+  background-color: var(--brand);
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar h2 {
+  color: #ffffff;
+  margin: 0;
+  padding-right: 5%;
+  font-weight: 700;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav .nav-link {
+  color: #e8f3fa;
+  text-decoration: none;
+  font-size: 1.05rem;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.navbar-nav .nav-link.active {
+  color: #ffffff;
+  font-weight: 700;
+  border-bottom: 2px solid #ffffff;
+}
+
+/* ------------------------------------------------------------------ cards */
+.card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(11, 110, 168, 0.08);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* -------------------------------------------------------------- headings */
+h1,
+h2,
+h3 {
+  color: var(--brand-dark);
+  font-weight: 700;
+}
+
+.page-title {
+  margin: 40px auto 24px auto;
+  max-width: 1100px;
+  padding: 0 24px;
+}
+
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 48px 24px;
+}
+
+/* ------------------------------------------------------------------ team */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.team-card {
+  padding: 18px;
+  text-align: center;
+}
+
+.team-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.team-card .role {
+  color: var(--muted);
+  font-style: italic;
+  margin: 4px 0 10px 0;
+}
+
+.team-card a {
+  color: var(--brand);
+  word-break: break-all;
+}
+
+/* ---------------------------------------------------------------- footer */
+footer {
+  background-color: var(--brand-dark);
+  color: #dce9f2;
+  text-align: center;
+  padding: 18px;
+  font-size: 0.92rem;
+}

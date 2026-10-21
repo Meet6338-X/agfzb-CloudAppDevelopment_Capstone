@@ -153,3 +153,8 @@ outputs/_*
 
 cookies.txt
 outputs/_*
+
+cookie.txt
+server/cookie.txt
+*.sqlite3
+server/db.sqlite3

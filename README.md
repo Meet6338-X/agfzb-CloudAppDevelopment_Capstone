@@ -1,130 +1,152 @@
-# Best Cars Dealership - Full Stack Cloud Development Capstone Project
+# Best Cars Dealership - Full-Stack Cloud Development Capstone Project
+
+**Repository name: xrwvm-fullstack_developer_capstone**
 
 **Project name: Best Cars Dealership - Full-Stack Cloud Development Capstone Project**
 
 A full-stack dealership review application for *Best Cars Dealership*, a national car
-retailer in the United States.  The application shows the dealership branches of the
-group and lets the visitors read and publish reviews of a branch.
+retailer in the United States. The application lists the dealership branches of the
+group, lets a visitor read the reviews of a branch, and lets a registered user publish
+a new review.
 
-| Layer | Technology |
-|---|---|
-| Front end | React 18 (Vite) - `server/frontend` |
-| Back end | Django 4.2 - `server` |
-| Microservices | Node.js / Express and Python / Flask cloud functions - `functions` |
-| Document store | Cloudant compatible document store - `cloudant/data` |
-| CI/CD | GitHub Actions (linting) and Docker / Kubernetes - `.github/workflows` |
+| Layer | Technology | Location |
+|---|---|---|
+| Front end | React 18 (Vite) | `server/frontend` |
+| Back end | Django 4.2 | `server` |
+| Dealership database API | Node.js / Express (+ Mongoose when available) | `server/database` |
+| Sentiment analyzer | Python / Flask (NLTK VADER) | `server/djangoapp/microservices` |
+| Document store | Cloudant compatible document store | `cloudant/data` |
+| CI/CD | GitHub Actions (linting + container build) | `.github/workflows` |
 
 ## Project layout
 
 ```
 .
-├── cloudant/data/            dealerships, reviews and car makes documents
-├── functions/                the cloud functions (dealers, car makes, reviews, sentiment)
-├── server/                   the Django application
-│   ├── djangoapp/            models, views, urls, restapis, admin, templates
-│   ├── djangobackend/        the Django project settings
-│   ├── frontend/             the React front end (static/About.html, static/Contact.html,
-│   │                         src/components/Register/Register.jsx, ...)
-│   ├── Dockerfile            the container image of the Django application
-│   ├── entrypoint.sh         the container entry point
-│   └── deployment.yaml       the Kubernetes deployment and service
-├── outputs/                  the captured terminal output of every lab task
-└── .github/workflows/        the GitHub Actions linting workflow
+|-- cloudant/data/                 dealerships, reviews and car makes documents
+|-- functions/                     the earlier cloud function implementation
+|-- generate_db_data.py            builds server/database/data from cloudant/data
+|-- server/
+|   |-- database/                  the dealership database API (Express, port 3030)
+|   |   |-- app.js                 /fetchDealers, /fetchDealer/:id, /fetchReviews...
+|   |   |-- data/                  the JSON documents served by the API
+|   |   `-- Dockerfile
+|   |-- djangoapp/                 the Django application
+|   |   |-- migrations/
+|   |   |-- management/commands/   seed_carmakes management command
+|   |   |-- microservices/         the sentiment analyzer (Flask, port 5050)
+|   |   |-- models.py              CarMake, CarModel, CarDealer, DealerReview
+|   |   |-- restapis.py            the calls to the database API and the analyzer
+|   |   |-- urls.py                the URL configuration
+|   |   |-- views.py               the HTML views and the JSON API views
+|   |   `-- templates/djangoapp/   index, about, contact, dealer_details, add_review
+|   |-- djangobackend/             the Django project settings
+|   |-- frontend/                  the React front end
+|   |   |-- src/components/        Header, Login, Register, Dealers, Dealer, PostReview
+|   |   `-- static/                About.html, Contact.html, style.css, images
+|   |-- Dockerfile                 the container image of the Django application
+|   |-- entrypoint.sh              the container entry point
+|   |-- deployment.yaml            the Kubernetes deployment and service
+|   `-- create_root_user.py        creates the `root` reviewer account
+|-- evidence/                      the screenshots submitted for the review criteria
+|-- outputs/                       the terminal output files submitted for review
+`-- cloudant/data/                 the seed documents
 ```
 
-## The application
+## The application URLs
 
-* **Home page** - `/djangoapp/` lists the 50 dealerships of the group.  The list can
-  be narrowed down to one state with the `state` query parameter, e.g.
-  `/djangoapp/?state=Kansas`.
-* **Dealer page** - `/djangoapp/dealer/<dealer_id>/` shows the reviews of a dealership
-  together with the sentiment analysis of every review.
-* **Add a review** - `/djangoapp/dealer/<dealer_id>/add_review/` posts a new review.
-* **User management** - `/djangoapp/registration`, `/djangoapp/login` and
-  `/djangoapp/logout`.
-* **Static pages** - `/djangoapp/about` and `/djangoapp/contact`, and the standalone
-  React pages `server/frontend/static/About.html` and
-  `server/frontend/static/Contact.html`.
-* **JSON endpoints** - `/djangoapp/carmakes` returns every car make with its car
-  models and `/djangoapp/analyze?text=...` returns the sentiment of a review text.
+| Page | URL |
+|---|---|
+| Home (all dealerships) | `http://localhost:8000/djangoapp/` |
+| Home filtered by state | `http://localhost:8000/djangoapp/?state=Kansas` |
+| About us | `http://localhost:8000/djangoapp/about` |
+| Contact us | `http://localhost:8000/djangoapp/contact` |
+| Sign up | `http://localhost:8000/djangoapp/registration` |
+| Dealer details and reviews | `http://localhost:8000/djangoapp/dealer/15/` |
+| Post a review | `http://localhost:8000/djangoapp/dealer/15/add_review/` |
+| Django admin | `http://localhost:8000/admin/` |
+
+## The JSON API
+
+| Endpoint | Description |
+|---|---|
+| `POST /djangoapp/login` | `{"userName": "...", "password": "..."}` |
+| `GET /djangoapp/logout` | returns `{"userName": ""}` |
+| `POST /djangoapp/register` | `{"userName", "password", "firstName", "lastName", "email"}` |
+| `GET /djangoapp/get_cars` | `{"status": 200, "CarModels": [...]}` |
+| `GET /djangoapp/fetchDealers` | `{"status": 200, "dealers": [...]}` |
+| `GET /djangoapp/fetchDealers/Kansas` | the dealers of one state |
+| `GET /djangoapp/fetchDealer/8` | `{"status": 200, "dealer": [...]}` |
+| `GET /djangoapp/fetchReviews/dealer/15` | `{"status": 200, "reviews": [...]}` |
+| `POST /djangoapp/add_review` | publishes a review |
+| `GET /djangoapp/analyze/Fantastic services` | the sentiment of a review |
+
+The database API itself (`server/database/app.js`, port 3030) serves
+`/fetchDealers`, `/fetchDealers/:state`, `/fetchDealer/:id`, `/fetchReviews`,
+`/fetchReviews/dealer/:id` and `POST /insert_review`. The sentiment analyzer
+(`server/djangoapp/microservices/app.py`, port 5050) serves `/analyze/<text>`.
 
 ## Running the project locally
 
-### 1. The cloud functions
-
 ```bash
-cd functions
-npm install                     # the Node.js dealers / car makes function
-pip install -r requirements.txt # the Python reviews / sentiment function
-node get-dealership.js          # listens on http://localhost:3000
-python reviews.py               # listens on http://localhost:5000
-```
+# 1. the dealership database API (port 3030)
+cd server/database && npm install && npm start
 
-### 2. The Django application
+# 2. the sentiment analyzer (port 5050)
+cd server/djangoapp/microservices && pip install -r requirements.txt && python app.py
 
-```bash
-cd server
-pip install -r requirements.txt
-python manage.py makemigrations djangoapp
+# 3. the Django application (port 8000)
+cd server && pip install -r requirements.txt
 python manage.py migrate
-python manage.py seed_carmakes     # loads the car makes and the car models
-python create_root_user.py         # creates the 'root' super user
+python manage.py seed_carmakes
+python create_root_user.py
 python manage.py runserver 8000
 ```
 
-The application is then available on <http://localhost:8000/djangoapp/>.
-The Django server calls the cloud functions through the `DEALERS_URL`, `REVIEWS_URL`,
-`POST_REVIEW_URL`, `CARMAKES_URL` and `SENTIMENT_URL` environment variables.
-
-### 3. The React front end
-
-```bash
-cd server/frontend
-npm install
-npm run dev        # http://localhost:3000
-npm run build
-```
+The front end is built with `cd server/frontend && npm install && npm run build`.
 
 ## Containerizing the application
 
 ```bash
-docker build -t us.icr.io/$MY_NAMESPACE/dealership:latest server/
-docker run -d -p 8000:8000 \
-  -e DEALERS_URL=http://host.docker.internal:3000/dealerships/get \
-  -e REVIEWS_URL=http://host.docker.internal:5000/api/get_reviews \
-  -e POST_REVIEW_URL=http://host.docker.internal:5000/api/post_review \
-  -e CARMAKES_URL=http://host.docker.internal:3000/carmakes/get \
-  -e SENTIMENT_URL=http://host.docker.internal:5000/api/analyze \
-  us.icr.io/$MY_NAMESPACE/dealership:latest
+cd server
+docker build -t dealership:latest .
+docker run -d --name dealership-app -p 8000:8000 \
+    -e backend_url=http://host.docker.internal:3030 \
+    -e sentiment_analyzer_url=http://host.docker.internal:5050/ \
+    dealership:latest
 ```
 
-The `server/deployment.yaml` file holds the equivalent Kubernetes deployment.
-
-## The captured lab output
-
-Every task of the capstone assignment has its terminal output stored in the
-`outputs` folder:
-
-| File | Content |
-|---|---|
-| `django_server` | the Django development server running |
-| `loginuser` | the cURL login request and its response |
-| `logoutuser` | the cURL logout request and its response |
-| `getdealerreviews` | the reviews of one dealership |
-| `getalldealers` | every dealership |
-| `getdealerbyid` | one dealership |
-| `getdealersbyState` | the dealerships of Kansas |
-| `getallcarmakes` | every car make and car model |
-| `analyzereview` | the sentiment analysis of "Fantastic services" |
-| `CICD` | the output of the GitHub Actions linting workflow |
-| `deploymentURL` | the URL of the deployed application |
+The container image is built and verified by the `Build the application container
+image` job of the `Lint Code` GitHub Actions workflow.
 
 ## Continuous integration
 
-The **Lint Code** workflow (`.github/workflows/linter.yml`) lints the JavaScript
-function, the Python function and the Django server on every push to `master` or
-`main`.  It can also be started manually from the *Actions* tab of the repository.
+`.github/workflows/linter.yml` runs on every push and pull request and on demand:
 
-## License
+* `Linting JavaScript Function` - ESLint on the sample Node.js function
+* `Linting Dealership Cloud Function` - ESLint on `server/database`
+* `Linting Python Function` - pylint on the sample Python function
+* `Linting Reviews Cloud Function` - pylint on the Flask services
+* `Linting Django Server` - pylint on the Django project
+* `Linting Django Application` - pylint on the Django application
+* `Build the application container image` - builds the container image
+
+## Submitted evidence
+
+| File | Review criterion |
+|---|---|
+| `outputs/django_server` | the Django development server running |
+| `outputs/loginuser` | the login operation |
+| `outputs/logoutuser` | the logout operation |
+| `outputs/getdealerreviews` | the reviews of a dealer |
+| `outputs/getalldealers` | all the dealers |
+| `outputs/getdealerbyid` | the details of one dealer |
+| `outputs/getdealersbyState` | the dealers of the state of Kansas |
+| `outputs/getallcarmakes` | all the car makes and models |
+| `outputs/analyzereview` | the sentiment of "Fantastic services" |
+| `outputs/CICD` | the GitHub Actions workflow run |
+| `outputs/deploymentURL` | the deployment URL of the application |
+| `evidence/*.png` | the screenshots of the application and the admin site |
+
+## Licence
 
 Apache License 2.0 - see [LICENSE](LICENSE).

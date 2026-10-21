@@ -9,6 +9,11 @@ RUN apt-get update \
 
 ENV APP=/app
 
+# The dealership database service and the sentiment analyzer service.  On a
+# developer machine they run on the host, so `host.docker.internal` is used.
+ENV backend_url=http://host.docker.internal:3030
+ENV sentiment_analyzer_url=http://host.docker.internal:5050/
+
 # Change the workdir.
 WORKDIR $APP
 

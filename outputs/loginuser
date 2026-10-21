@@ -1,15 +1,17 @@
-# Log in to the Django application with a valid username and password.
+# Log in with a valid user name and password.
 
-theia@theia-devshahm:/home/project/server$ curl -s -i -c cookies.txt -X POST -d "username=shahm&psw=Shahm@2024" http://localhost:8000/djangoapp/login
-HTTP/1.1 302 Found
-Date: Wed, 21 Oct 2026 07:49:13 GMT
+Command: curl.exe -i -c cookie.txt -X POST -H "Content-Type: application/json" -d "{\"userName\": \"shahm\", \"password\": \"Shahm@2024\"}" http://localhost:8000/djangoapp/login
+
+HTTP/1.1 200 OK
+Date: Wed, 21 Oct 2026 08:47:02 GMT
 Server: WSGIServer/0.2 CPython/3.12.6
-Content-Type: text/html; charset=utf-8
-Location: /djangoapp/
+Content-Type: application/json
 X-Frame-Options: DENY
-Content-Length: 0
+Content-Length: 89
 Vary: Cookie
 X-Content-Type-Options: nosniff
 Referrer-Policy: same-origin
 Cross-Origin-Opener-Policy: same-origin
-Set-Cookie:  sessionid=fhr7pfzy2kgldqm3uea9yakgqlwxcx2r; expires=Wed, 04 Nov 2026 07:49:13 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax
+Set-Cookie:  sessionid=wdev8qejchcmiv3uz31sjjfzod4hvm56; expires=Wed, 04 Nov 2026 08:47:02 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax
+
+{"userName": "shahm", "status": "Authenticated", "firstname": "Shahm", "lastname": "Dar"}

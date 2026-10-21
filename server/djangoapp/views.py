@@ -1,4 +1,16 @@
-"""Django views for the Best Cars Dealership capstone application."""
+"""Django views for the Best Cars Dealership capstone application.
+
+The application exposes two flavours of endpoint:
+
+* the HTML pages of the Django template application (home page, dealer
+  details, review form, about and contact pages), and
+* a JSON API that the React front end and the cURL based review exercises
+  use.  The JSON API mirrors the endpoints of the backend services
+  (``/fetchDealers``, ``/fetchDealer/<id>``, ``/fetchReviews/dealer/<id>``)
+  and of the user management endpoints (``/login``, ``/logout``,
+  ``/register``).
+"""
+import json
 import logging
 
 from django.contrib import messages
@@ -8,13 +20,38 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.csrf import csrf_exempt
 
-from .models import CarModel
-from .restapis import (CARMAKES_URL, DEALERS_URL, POST_REVIEW_URL, REVIEWS_URL,
-                        analyze_review_sentiments, get_car_makes_from_cf,
-                        get_dealer_by_id_from_cf, get_dealer_reviews_from_cf,
-                        get_dealers_from_cf, post_request)
+from .models import CarMake, CarModel
+from .populate import initiate
+from .restapis import (analyze_review_sentiments, get_request, post_review)
 
 logger = logging.getLogger(__name__)
+
+
+def _wants_json(request):
+    """Return True when the caller expects a JSON answer.
+
+    A browser navigating to the application sends ``Accept: text/html`` and
+    therefore gets the HTML pages.  Every other client (curl, the React
+    front end, the automated review exercises) receives JSON.
+    """
+    accept = request.headers.get('Accept', '')
+    if 'application/json' in accept:
+        return True
+    if request.content_type == 'application/json':
+        return True
+    if 'text/html' in accept:
+        return False
+    return True
+
+
+def _json_body(request):
+    """Return the decoded JSON body of a request."""
+    if not request.body:
+        return {}
+    try:
+        return json.loads(request.body)
+    except (ValueError, TypeError):
+        return {}
 
 
 # Create an `about` view to render a static about page
@@ -32,9 +69,31 @@ def contact(request):
 
 
 # Create a `login_request` view to handle sign in request
+@csrf_exempt
 def login_request(request):
-    """Log a user in with the username / password sent by the login form."""
+    """Log a user in.
+
+    The JSON flavour of the endpoint accepts ``{"userName": ...,
+    "password": ...}`` and answers with the name of the authenticated user,
+    the HTML flavour is used by the login form of the navigation bar.
+    """
     context = {}
+    if _wants_json(request):
+        data = _json_body(request)
+        username = data.get('userName', '')
+        password = data.get('password', '')
+        user = authenticate(request, username=username, password=password)
+        res_data = {"userName": username}
+        if user is not None:
+            login(request, user)
+            res_data = {
+                "userName": username,
+                "status": "Authenticated",
+                "firstname": user.first_name,
+                "lastname": user.last_name,
+            }
+        return JsonResponse(res_data)
+
     if request.method == "POST":
         username = request.POST['username']
         psw = request.POST['psw']
@@ -48,18 +107,47 @@ def login_request(request):
     return render(request, 'djangoapp/registration.html', context)
 
 
+# The name used by the course material for the login view
+login_user = login_request
+
+
 # Create a `logout_request` view to handle sign out request
+@csrf_exempt
 def logout_request(request):
     """Log the current user out and return to the home page."""
     print(f"Log out the user `{request.user.username}`")
     logout(request)
+    if _wants_json(request):
+        return JsonResponse({"userName": ""})
     return redirect("djangoapp:index")
 
 
 # Create a `registration_request` view to handle sign up request
+@csrf_exempt
 def registration_request(request):
     """Create a new user account and log the new user in."""
     context = {}
+    if _wants_json(request):
+        if request.method != "POST":
+            return JsonResponse({"userName": "", "error": "Bad Request"}, status=400)
+        data = _json_body(request)
+        username = data.get('userName', '')
+        password = data.get('password', '')
+        firstname = data.get('firstName', '')
+        lastname = data.get('lastName', '')
+        email = data.get('email', '')
+        if User.objects.filter(username=username).exists():
+            return JsonResponse({"userName": username,
+                                 "error": "Already Registered"})
+        User.objects.create_user(username=username, password=password,
+                                  first_name=firstname, last_name=lastname,
+                                  email=email)
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+        return JsonResponse({"userName": username, "status": "Authenticated",
+                             "firstname": firstname, "lastname": lastname})
+
     if request.method == "POST":
         username = request.POST['username']
         firstname = request.POST['firstname']
@@ -78,6 +166,10 @@ def registration_request(request):
     return render(request, 'djangoapp/registration.html', context)
 
 
+# The name used by the course material for the registration view
+registration = registration_request
+
+
 # Update the `get_dealerships` view to render the index page with a list of dealerships
 def get_dealerships(request):
     """Render the home page with the list of dealerships.
@@ -88,9 +180,11 @@ def get_dealerships(request):
     context = {}
     if request.method == "GET":
         state = request.GET.get('state')
-        dealerships = get_dealers_from_cf(DEALERS_URL, state=state) if state \
-            else get_dealers_from_cf(DEALERS_URL)
-        context["dealership_list"] = dealerships
+        if state:
+            dealerships = get_request(f"/fetchDealers/{state}")
+        else:
+            dealerships = get_request("/fetchDealers")
+        context["dealership_list"] = dealerships if dealerships else []
         context["selected_state"] = state
         return render(request, 'djangoapp/index.html', context)
     return HttpResponse(status=405)
@@ -101,12 +195,14 @@ def get_dealer_details(request, dealer_id):
     """Render the page of one dealership together with its reviews."""
     context = {}
     if request.method == "GET":
-        url = reviews_url_with_id(dealer_id)
-        reviews = get_dealer_reviews_from_cf(url)
-        dealer = get_dealer_by_id_from_cf(DEALERS_URL, dealer_id)
+        reviews = get_request(f"/fetchReviews/dealer/{dealer_id}") or []
+        for review in reviews:
+            review['sentiment'] = analyze_review_sentiments(
+                review.get('review', '')).get('sentiment', 'neutral')
+        dealers = get_request(f"/fetchDealer/{dealer_id}") or []
         context["reviews"] = reviews
         context["dealer_id"] = dealer_id
-        context["dealer"] = dealer[1] if len(dealer) > 1 else None
+        context["dealer"] = dealers[0] if dealers else None
         return render(request, 'djangoapp/dealer_details.html', context)
     return HttpResponse(status=405)
 
@@ -116,11 +212,11 @@ def get_dealer_details(request, dealer_id):
 def add_review(request, dealer_id):
     """Show the review form of a dealership and store a submitted review."""
     context = {}
-    dealer = get_dealer_by_id_from_cf(DEALERS_URL, dealer_id)
-    if len(dealer) < 2:
+    dealers = get_request(f"/fetchDealer/{dealer_id}") or []
+    if not dealers:
         messages.error(request, "The dealership could not be found.")
         return redirect("djangoapp:index")
-    dealer = dealer[1]
+    dealer = dealers[0]
 
     if request.method == "GET":
         context["cars"] = CarModel.objects.all()
@@ -141,8 +237,8 @@ def add_review(request, dealer_id):
         review["car_model"] = car.name
         review["car_year"] = car.year.year
 
-        response = post_request(POST_REVIEW_URL, json_payload={"review": review})
-        if response is not None and response.status_code in (200, 201):
+        response = post_review({"review": review})
+        if response and response.get("status") in (200, 201):
             print(f"Review posted successfully for dealer {dealer_id}")
         else:
             messages.error(request, "The review could not be saved.")
@@ -150,38 +246,68 @@ def add_review(request, dealer_id):
     return HttpResponse(status=405)
 
 
-# The URL of the reviews of one dealership
-def reviews_url_with_id(dealer_id):
-    """Build the URL of the cloud function that returns the reviews."""
-    return f"{REVIEWS_URL}?id={dealer_id}"
-
-
 # A JSON endpoint that returns every car make together with its car models
-def get_carmakes(request):  # pylint: disable=unused-argument
-    """Return all the car makes and car models as a JSON document."""
-    car_makes = get_car_makes_from_cf(CARMAKES_URL)
-    if not car_makes:
-        # Fall back on the local database when the cloud function is down
-        car_makes = [
-            {
-                "id": make.id,
-                "name": make.name,
-                "description": make.description,
-                "car_models": [
-                    {"id": car.id, "name": car.name, "dealer_id": car.dealer_id,
-                     "model_type": car.model_type, "year": car.year.year}
-                    for car in CarModel.objects.filter(car_make=make)
-                ],
-            }
-            for make in CarModel.objects.select_related('car_make')
-            .values_list('car_make', flat=True).distinct()
-        ]
-    return JsonResponse({"car_makes": car_makes}, safe=False)
+def get_cars(request):  # pylint: disable=unused-argument
+    """Return all the car makes and models as a JSON document."""
+    count = CarMake.objects.filter().count()
+    if count == 0:
+        initiate()
+    cars = [
+        {
+            "CarModel": model.name,
+            "CarMake": model.car_make.name,
+        }
+        for model in CarModel.objects.select_related('car_make')
+    ]
+    return JsonResponse({"status": 200, "CarModels": cars})
+
+
+# A JSON endpoint that returns every dealership
+def get_dealers_json(request, state="All"):
+    """Return every dealership, optionally filtered on the state."""
+    if state in (None, "", "All"):
+        endpoint = "/fetchDealers"
+    else:
+        endpoint = f"/fetchDealers/{state}"
+    dealerships = get_request(endpoint)
+    return JsonResponse({"status": 200,
+                         "dealers": dealerships if dealerships is not None else []})
+
+
+# A JSON endpoint that returns one dealership
+def get_dealer_details_json(request, dealer_id):
+    """Return the details of one dealership."""
+    endpoint = f"/fetchDealer/{dealer_id}"
+    dealer = get_request(endpoint)
+    return JsonResponse({"status": 200, "dealer": dealer if dealer is not None else []})
+
+
+# A JSON endpoint that returns the reviews of one dealership
+def get_dealer_reviews_json(request, dealer_id):
+    """Return the reviews of one dealership together with their sentiment."""
+    endpoint = f"/fetchReviews/dealer/{dealer_id}"
+    reviews = get_request(endpoint) or []
+    for review in reviews:
+        review['sentiment'] = analyze_review_sentiments(
+            review.get('review', '')).get('sentiment', 'neutral')
+    return JsonResponse({"status": 200, "reviews": reviews})
+
+
+# A JSON endpoint that stores a new review
+@csrf_exempt
+def add_review_json(request):
+    """Store a new review that is sent as a JSON document."""
+    if request.method != "POST":
+        return JsonResponse({"status": 400, "error": "Bad Request"}, status=400)
+    data = _json_body(request)
+    review = data.get('review', data)
+    post_review({"review": review})
+    return JsonResponse({"status": 200})
 
 
 # A JSON endpoint that returns the sentiment of a review text
 def analyze(request):
     """Return the sentiment label of the review text passed in the query."""
     text = request.GET.get("text", "")
-    sentiment = analyze_review_sentiments(text)
-    return JsonResponse({"text": text, "sentiment": sentiment}, safe=False)
+    sentiment = analyze_review_sentiments(text).get("sentiment", "neutral")
+    return JsonResponse({"text": text, "sentiment": sentiment})

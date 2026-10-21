@@ -1,15 +1,14 @@
-# The Django development server for the Best Cars Dealership app.
-theia@theia-devshahm:/home/project/server$ python manage.py runserver 8000
+# The Django development server of the Best Cars Dealership app.
+
+Command: python manage.py runserver 8000
+
 Performing system checks...
 
 System check identified no issues (0 silenced).
-October 21, 2026 - 13:19:01
+October 21, 2026 - 14:16:57
 Django version 4.2.16, using settings 'djangobackend.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 
-GET from http://localhost:3000/dealerships/get 
-With status 200 
-JSON RESULT: 50 dealership document(s) retrieved
-[21/Oct/2026 13:19:09] "GET /djangoapp/ HTTP/1.1" 200 31677
-[21/Oct/2026 13:19:09] "GET /djangoapp/about HTTP/1.1" 200 4801
+Not Found: /health
+[21/Oct/2026 14:16:58] "GET /health HTTP/1.1" 404 2338

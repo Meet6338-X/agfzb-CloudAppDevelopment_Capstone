@@ -1,4 +1,15 @@
-# The reviews submitted for dealer id 15.
+# The reviews that were submitted for dealer id 15.
 
-theia@theia-devshahm:/home/project/server$ curl -s -X GET "http://localhost:5000/api/get_reviews?id=15"
-[{"car_make":"Audi","car_model":"A6","car_year":2010,"dealership":15,"id":1,"name":"Berkly Shepley","purchase":true,"purchase_date":"07/11/2020","review":"Total grid-enabled service-desk"},{"car_make":"Audi","car_model":"A6","car_year":2010,"dealership":15,"id":"15","name":"Tempsoft Car Dealership","purchase":null,"purchase_date":"","review":"Fantastic services, friendly staff and a great car."},{"car_make":"Audi","car_model":"A6","car_year":2010,"dealership":15,"id":"15","name":"Tempsoft Car Dealership","purchase":null,"purchase_date":"","review":"Fantastic services, friendly staff and a great car."},{"car_make":"Audi","car_model":"A6","car_year":2010,"dealership":15,"id":"15","name":"Tempsoft Car Dealership","purchase":"Yes","purchase_date":"2026-10-15","review":"Fantastic services, friendly staff and a great car."},{"car_make":"Audi","car_model":"A6","car_year":2010,"dealership":15,"id":"15","name":"Tempsoft Car Dealership","purchase":"Yes","purchase_date":"2026-10-15","review":"Fantastic services, friendly staff and a great car."}]
+Command: curl.exe -i http://localhost:8000/djangoapp/fetchReviews/dealer/15
+
+HTTP/1.1 200 OK
+Date: Wed, 21 Oct 2026 08:47:07 GMT
+Server: WSGIServer/0.2 CPython/3.12.6
+Content-Type: application/json
+X-Frame-Options: DENY
+Content-Length: 590
+X-Content-Type-Options: nosniff
+Referrer-Policy: same-origin
+Cross-Origin-Opener-Policy: same-origin
+
+{"status": 200, "reviews": [{"id": 1, "name": "Berkly Shepley", "dealership": 15, "review": "Total grid-enabled service-desk", "purchase": true, "purchase_date": "07/11/2020", "car_make": "Audi", "car_model": "A6", "car_year": 2010, "_id": "c8f5c174d0eed5be98693ce0", "sentiment": "neutral"}, {"id": 15, "name": "Tempsoft Car Dealership", "dealership": 15, "review": "Fantastic services, friendly staff and a great car.", "purchase": "Yes", "purchase_date": "2026-10-15", "car_make": "Audi", "car_model": "A6", "car_year": 2010, "_id": "c4617564b1254f0d244dfe76", "sentiment": "positive"}]}
